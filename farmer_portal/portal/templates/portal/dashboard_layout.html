@@ -1,3 +1,11 @@
+<!--
+  Inherit the following blocks in the template that extends this template:
+  Press ctrl + F  and search for thr following blocks within this template
+    nav-title
+    top-nav-list-items
+    side-nav-list-items
+
+ -->
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
@@ -10,25 +18,24 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
   <!-- Bootstrap core CSS -->
   <!-- <link rel="stylesheet" type="text/css" href="{% static 'portal/main.css' %}"> -->
-  <link href="{% static 'farmers/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'portal/css/bootstrap.min.css' %}" rel="stylesheet">
   <!-- Material Design Bootstrap -->
-  <link href="{% static 'farmers/css/mdb.min.css' %}" rel="stylesheet">
+  <link href="{% static 'portal/css/mdb.min.css' %}" rel="stylesheet">
   <!-- Your custom styles (optional) -->
-  <link href="{% static 'farmers/css/style.min.css' %}" rel="stylesheet">
+  <link href="{% static 'portal/css/style.min.css' %}" rel="stylesheet">
   <style>
-
     .map-container{
-overflow:hidden;
-padding-bottom:56.25%;
-position:relative;
-height:0;
-}
-.map-container iframe{
-left:0;
-top:0;
-height:100%;
-width:100%;
-position:absolute;
+    overflow:hidden;
+    padding-bottom:56.25%;
+    position:relative;
+    height:0;
+    }
+    .map-container iframe{
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+    position:absolute;
 }
   </style>
 </head>
@@ -43,8 +50,8 @@ position:absolute;
       <div class="container-fluid">
 
         <!-- Brand -->
-        <a class="navbar-brand waves-effect" href="https://mdbootstrap.com/docs/jquery/" target="_blank">
-          <strong class="blue-text">MDB</strong>
+        <a class="navbar-brand waves-effect" href="#" target="_blank">
+          <strong class="blue-text">{% block nav-title %}{% endblock nav-title%}</strong>
         </a>
 
         <!-- Collapse -->
@@ -58,43 +65,38 @@ position:absolute;
 
           <!-- Left -->
           <ul class="navbar-nav mr-auto">
+            {% block top-nav-list-items %}{% endblock top-nav-list-items%}
+            <!--
+            The above block supports the below code
             <li class="nav-item active">
               <a class="nav-link waves-effect" href="#">Home
                 <span class="sr-only">(current)</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link waves-effect" href="https://mdbootstrap.com/docs/jquery/" target="_blank">About
+              <a class="nav-link waves-effect" href="#" target="_blank">About
                 MDB</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link waves-effect" href="https://mdbootstrap.com/docs/jquery/getting-started/download/"
-                target="_blank">Free
-                download</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link waves-effect" href="https://mdbootstrap.com/education/bootstrap/" target="_blank">Free
-                tutorials</a>
-            </li>
+          -->
           </ul>
 
           <!-- Right -->
           <ul class="navbar-nav nav-flex-icons">
             <li class="nav-item">
-              <a href="https://www.facebook.com/mdbootstrap" class="nav-link waves-effect" target="_blank">
+              <a href="#" class="nav-link waves-effect" target="_blank">
                 <i class="fab fa-facebook-f"></i>
               </a>
             </li>
             <li class="nav-item">
-              <a href="https://twitter.com/MDBootstrap" class="nav-link waves-effect" target="_blank">
+              <a href="#" class="nav-link waves-effect" target="_blank">
                 <i class="fab fa-twitter"></i>
               </a>
             </li>
             <li class="nav-item">
-              <a href="https://github.com/mdbootstrap/bootstrap-material-design" class="nav-link border border-light rounded waves-effect"
+              <!-- <a href="#" class="nav-link border border-light rounded waves-effect"
                 target="_blank">
-                <i class="fab fa-github mr-2"></i>MDB GitHub
-              </a>
+                <i class="fab fa-github mr-2"></i>
+              </a> -->
             </li>
           </ul>
 
@@ -108,21 +110,20 @@ position:absolute;
     <div class="sidebar-fixed position-fixed">
 
       <a class="logo-wrapper waves-effect">
-        <img src="https://mdbootstrap.com/img/logo/mdb-email.png" class="img-fluid" alt="">
+        <img src="#" class="img-fluid" alt="">
       </a>
 
       <div class="list-group list-group-flush">
-        <a href="#" class="list-group-item active waves-effect">
+        {% block side-nav-list-items %}{% endblock side-nav-list-items%}
+        <!--
+        The above block supports the below code (Inherit this code)
+         <a href="#" class="list-group-item active waves-effect">
           <i class="fas fa-chart-pie mr-3"></i>Dashboard
         </a>
         <a href="#" class="list-group-item list-group-item-action waves-effect">
-          <i class="fas fa-user mr-3"></i>Profile</a>
-        <a href="#" class="list-group-item list-group-item-action waves-effect">
-          <i class="fas fa-table mr-3"></i>Tables</a>
-        <a href="#" class="list-group-item list-group-item-action waves-effect">
-          <i class="fas fa-map mr-3"></i>Maps</a>
-        <a href="#" class="list-group-item list-group-item-action waves-effect">
-          <i class="fas fa-money-bill-alt mr-3"></i>Orders</a>
+          <i class="fas fa-user mr-3"></i>Profile
+        </a>
+      -->
       </div>
 
     </div>
@@ -142,7 +143,7 @@ position:absolute;
         <div class="card-body d-sm-flex justify-content-between">
 
           <h4 class="mb-2 mb-sm-0 pt-1">
-            <a href="https://mdbootstrap.com/docs/jquery/" target="_blank">Home Page</a>
+            <a href="#" target="_blank">Home Page</a>
             <span>/</span>
             <span>Dashboard</span>
           </h4>
@@ -160,7 +161,7 @@ position:absolute;
 
       </div>
       <!-- Heading -->
-      {% block content %}{% endblock %}
+      {% block content %}{% endblock content %}
     </div>
   </main>
   <!--Main layout-->
@@ -170,13 +171,11 @@ position:absolute;
 
     <!--Call to action-->
     <div class="pt-4">
-      <a class="btn btn-outline-white" href="https://mdbootstrap.com/docs/jquery/getting-started/download/" target="_blank"
-        role="button">Download
-        MDB
+      <a class="btn btn-outline-white" href="#" target="_blank"
+        role="button">Download your reports
         <i class="fas fa-download ml-2"></i>
       </a>
-      <a class="btn btn-outline-white" href="https://mdbootstrap.com/education/bootstrap/" target="_blank" role="button">Start
-        free tutorial
+      <a class="btn btn-outline-white" href="#" target="_blank" role="button"> E-Learning Videos
         <i class="fas fa-graduation-cap ml-2"></i>
       </a>
     </div>
@@ -186,44 +185,27 @@ position:absolute;
 
     <!-- Social icons -->
     <div class="pb-4">
-      <a href="https://www.facebook.com/mdbootstrap" target="_blank">
+      <a href="#" target="_blank">
         <i class="fab fa-facebook-f mr-3"></i>
       </a>
 
-      <a href="https://twitter.com/MDBootstrap" target="_blank">
+      <a href="#" target="_blank">
         <i class="fab fa-twitter mr-3"></i>
       </a>
 
-      <a href="https://www.youtube.com/watch?v=7MUISDJ5ZZ4" target="_blank">
+      <a href="#" target="_blank">
         <i class="fab fa-youtube mr-3"></i>
       </a>
 
-      <a href="https://plus.google.com/u/0/b/107863090883699620484" target="_blank">
-        <i class="fab fa-google-plus mr-3"></i>
-      </a>
 
-      <a href="https://dribbble.com/mdbootstrap" target="_blank">
-        <i class="fab fa-dribbble mr-3"></i>
-      </a>
 
-      <a href="https://pinterest.com/mdbootstrap" target="_blank">
-        <i class="fab fa-pinterest mr-3"></i>
-      </a>
-
-      <a href="https://github.com/mdbootstrap/bootstrap-material-design" target="_blank">
-        <i class="fab fa-github mr-3"></i>
-      </a>
-
-      <a href="http://codepen.io/mdbootstrap/" target="_blank">
-        <i class="fab fa-codepen mr-3"></i>
-      </a>
     </div>
     <!-- Social icons -->
 
     <!--Copyright-->
     <div class="footer-copyright py-3">
       © 2019 Copyright:
-      <a href="https://mdbootstrap.com/education/bootstrap/" target="_blank"> MDBootstrap.com </a>
+      <a href="#" target="_blank"> Ministry of Agriculture; &nbsp; GOVERNMENT OF MAHARASHTRA </a>
     </div>
     <!--/.Copyright-->
 
@@ -234,13 +216,13 @@ position:absolute;
   <!-- <link rel="stylesheet" type="text/css" href="{% static 'portal/main.css' %}"> -->
 
   <!-- JQuery -->
-  <script type="text/javascript" src="{% static 'farmers/js/jquery-3.4.1.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'portal/js/jquery-3.4.1.min.js' %}"></script>
   <!-- Bootstrap tooltips -->
-  <script type="text/javascript" src="{% static 'farmers/js/popper.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'portal/js/popper.min.js' %}"></script>
   <!-- Bootstrap core JavaScript -->
-  <script type="text/javascript" src="{% static 'farmers/js/bootstrap.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'portal/js/bootstrap.min.js' %}"></script>
   <!-- MDB core JavaScript -->
-  <script type="text/javascript" src="{% static 'farmers/js/mdb.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'portal/js/mdb.min.js' %}"></script>
   <!-- Initializations -->
   <script type="text/javascript">
     // Animations initialization

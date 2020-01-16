@@ -1,4 +1,26 @@
-{% extends "farmers/base.html" %}
+
+
+{% extends "portal/dashboard_layout.html" %}
+{% block nav-title %} Farmer-Portal {%endblock nav-title%}
+{% block top-nav-list-items %}
+<li class="nav-item active">
+  <a class="nav-link waves-effect" href="#">Home
+    <span class="sr-only">(current)</span>
+  </a>
+</li>
+<li class="nav-item">
+  <a class="nav-link waves-effect" href="#" target="_blank">About
+    MDB</a>
+</li>
+{% endblock top-nav-list-items%}
+{% block side-nav-list-items %}
+ <a href="#" class="list-group-item active waves-effect">
+  <i class="fas fa-chart-pie mr-3"></i>Dashboard
+</a>
+<a href="#" class="list-group-item list-group-item-action waves-effect">
+  <i class="fas fa-user mr-3"></i>Profile
+</a>
+{% endblock side-nav-list-items%}
 {% block content %}
       <!--Grid row-->
       <div class="row wow fadeIn">
