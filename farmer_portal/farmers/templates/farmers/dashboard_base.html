@@ -1,0 +1,44 @@
+{% extends "portal/dashboard_layout.html" %}
+{% block title%} Dashboard {% endblock title%}
+{% block nav-title %} Farmer-Portal {%endblock nav-title%}
+{% block top-nav-list-items %}
+<li class="nav-item active">
+  <a class="nav-link waves-effect" href="#">Home
+    <span class="sr-only">(current)</span>
+  </a>
+</li>
+<li class="nav-item">
+  <a class="nav-link waves-effect" href="#" target="_blank">Add Produce</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link waves-effect" href="#" target="_blank">Revenues</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link waves-effect" href="#" target="_blank">Feedback</a>
+</li>
+{% endblock top-nav-list-items%}
+{% block side-nav-list-items %}
+ <a href="#" class="list-group-item active waves-effect">
+  <i class="fas fa-chart-pie mr-3"></i>Dashboard
+</a>
+<a href="#" class="list-group-item list-group-item-action waves-effect">
+  <i class="fas fa-user mr-3"></i>Profile
+</a>
+<a href="#" class="list-group-item list-group-item-action waves-effect">
+  <i class="fas fa-folder mr-3"></i>Add Produce
+</a>
+<a href="#" class="list-group-item list-group-item-action waves-effect">
+  <i class="fas fa-users mr-3"></i>Applications
+</a>
+<a href="#" class="list-group-item list-group-item-action waves-effect">
+  <i class="fas fa-box-open mr-3"></i>Orders
+</a>
+<a href="#" class="list-group-item list-group-item-action waves-effect">
+  <i class="fas fa-exclamation-circle mr-3"></i>Complaints
+</a>
+<a href="#" class="list-group-item list-group-item-action waves-effect">
+  <i class="fas fa-cogs mr-3"></i>Services
+</a>
+{% endblock side-nav-list-items%}
+{% block content %}
+{% endblock content %}
