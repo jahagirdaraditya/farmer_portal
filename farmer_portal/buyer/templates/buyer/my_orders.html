@@ -1,0 +1,48 @@
+{% extends "buyer/dashboard_base.html" %}
+{%block breadcrumb%}My Orders{% endblock breadcrumb%}
+
+{%block content%}
+<div class="container" style="background-color: white;">
+{% for post in buy_now_details %}
+
+<!-- card  -->
+
+    <div class="card">
+      <div class="card-header" style="background-color: #f1eded;">
+        <div class="row">
+            <div class="col-sm-6">
+                <a href="#" type="button" class="btn btn-info">{{ post.transaction_id }}</a>
+            </div>
+            <div class="col-sm-6">
+                <a href="#" type="button" class="btn" style="background-color:#e6e6e6; margin-left:60%">
+                    <i class="fas fa-map-marker-alt" style="color:#2874f0"></i>
+                    Track</a>
+            </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="row">
+            <div class=" col-sm-3">
+                <img class="rounded-circle article-img" src="https://siloscordoba.com/wp-content/uploads/2018/09/Almacenar-granos-forma-segura.jpg">
+            </div>
+            <div class=" col-sm-3">
+                <h3><a class="mr-2" style="color:black" href="#">{{ post.product }}</a>
+                </h3>
+                <h6>{{ post.name }}</h6>
+            </div>
+            <div class=" col-sm-3">
+              <h5>₹ {{ post.rs }}</h5>
+            </div>
+            <div class=" col-sm-3">
+              <h6>{{ post.status }}</h6>
+              <small>{{ post.transaction_id }}</small>
+            </div>
+        </div>
+      </div> 
+      <h6 class="text-muted">Ordered on : <span style="color:black">{{ post.date_posted }}</span></h6>
+    </div>
+    <br>
+{% endfor %}
+</div>
+
+{%endblock content%}

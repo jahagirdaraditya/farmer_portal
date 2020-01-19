@@ -1,0 +1,96 @@
+{% extends "buyer/dashboard_base_checkout.html" %}
+{%block breadcrumb%}BuyNow{% endblock breadcrumb%}
+{%block content%}
+  <!--Main layout-->
+    <div class="container wow fadeIn">
+        <div class="col-md-12 mb-4">
+          <!-- Cart -->
+          <div class="card">
+              <div class="row">
+                <div class="column">
+            <img class=" article-img-checkout" src="https://siloscordoba.com/wp-content/uploads/2018/09/Almacenar-granos-forma-segura.jpg">
+            </div>
+            <div class="column">
+                <h4>Soyabean Oil Seeds</h4>
+              <h4><b>₹ 5550</b></h4>
+              <h6 class="text-muted">Available Quantity : 350 Quintal</h6>
+            <span class="badge badge-success badge-pill">4
+                <i class="fas fa-star"></i>
+            </span>
+            <span class="text-muted">72 ratings</span>
+
+            <form>
+                <!--pincode-->
+                  <div class="md-form mb-5">
+                      <div class="row">
+                          <div class="column">
+                    <input type="text" id="pincode" class="form-control" placeholder="Delivery Pincode">
+                    <label for="pincode" class="">Pincode</label>
+                </div>
+                <span class="column">
+                    <button class="btn btn-success btn-sm">Apply</button>
+                </span>
+                  </div>
+                </div>
+            </form>
+            <!-- dropdown for courier -->
+              <!--Grid column-->
+              <div class="col-lg-8 col-md-6 mb-4">
+
+                <label for="courier_services">Courier Services</label>
+                <select class="custom-select d-block w-100" id="courirs" required>
+                  <option value="1">Choose...</option>
+                  <option value="2">CDN Couriers - ₹ 50</option>
+                  <option value="3">RFG Couriers - ₹ 60</option>
+                  <option value="4">THU Couriers - ₹ 78</option>
+                  <option value="5">ERR Couriers - ₹ 84</option>
+                  <option value="6">DK Couriers - ₹ 99</option>
+                </select>
+                <div class="invalid-feedback">
+                  Please provide a valid Courier.
+                </div>
+
+              </div>
+              <!--Grid column-->
+
+              <!--Grid column-->
+              <div class="row">
+              <div class="col-lg-4 col-md-6 mb-4">
+                <label for="wght">Weight</label>
+                <input type="text" class="form-control" id="wght" placeholder="" required>
+                <div class="invalid-feedback">
+                  weight required.
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-4">
+                <label for="wght">Count</label>
+                <select class="custom-select d-block w-100" id="wght" required>
+                  <option value="1">Kg</option>
+                  <option value="2">Quintal</option>
+                  <option value="3">Ton</option>
+                </select>
+            </div>
+              </div>
+              <!--Grid column-->
+
+            </div>
+            <!--Grid row-->
+
+            <!-- dropdown for courier -->
+              </div>
+              <a href="#" class="btn btn-success" type="button" style="margin-left:80%">
+                <i class="fas fa-shopping-cart fa-lg mr-1"></i>Buy Now
+              </a>
+            </div>
+            
+        </div>
+          <!-- Cart -->
+        </div>
+        <!--Grid column-->
+      </div>
+      <!--Grid row-->
+    </div>
+  <!--Main layout-->
+    <hr class="my-4">
+    
+    {% endblock %}

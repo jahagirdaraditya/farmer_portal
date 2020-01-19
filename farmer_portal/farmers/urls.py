@@ -8,3 +8,4 @@ urlpatterns = [
     path('check/', farmer_views.check , name='farmer-check'),
     path('myapplications/', farmer_views.farmerApplications, name='farmer-applications')
 ]
+
