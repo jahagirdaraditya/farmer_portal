@@ -31,6 +31,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'admin_portal.apps.AdminPortalConfig',
+    'buyer.apps.BuyerConfig',
     'farmers.apps.FarmersConfig',
     'portal.apps.PortalConfig',
     'django.contrib.admin',

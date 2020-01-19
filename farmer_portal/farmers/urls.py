@@ -7,3 +7,4 @@ urlpatterns = [
     path('addProduce/', farmer_views.addProduce , name='farmer-addProduce-Form'),
     path('check/', farmer_views.check , name='farmer-check'),
 ]
+

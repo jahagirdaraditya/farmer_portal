@@ -1,0 +1,156 @@
+{% extends "admin_portal/without_search_layout.html" %}
+{%block breadcrumb%}Service's{% endblock breadcrumb%}
+
+{%block content%}
+
+      <!--Grid row-->
+      <div class="row wow fadeIn d-flex justify-content-center">
+
+        
+        <!--Grid column-->
+        <div class="col-md-12 mb-4">
+
+          <!--Card-->
+          <div class="card">
+            <div class="card-header">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <button class="btn btn-info">Add Service</button>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="row">
+                            
+                    <div class="col-sm-10">
+                        <form class="d-flex justify-content-center">
+                        <!-- Default input -->
+                        <input type="search" placeholder="Search here" aria-label="Search" class="form-control">
+                        <button class="btn btn-primary btn-sm my-0 p" type="submit">
+                          <i class="fas fa-search"></i>
+                        </button>
+            
+                      </form>
+                    </div>
+                    <div class="col-sm-2">
+                        <!-- Basic dropdown -->
+                        <button class=" dropdown-toggle mr-4" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false" style="background:transparent;border-style:none">
+                        <i class="fas fa-filter"></i></button>
+            <div class="dropdown-menu">
+                <h6 class="dropdown-header">According to</h6>
+                <a class="dropdown-item" href="#">Name</a>
+                <a class="dropdown-item" href="#">Location</a>
+                <a class="dropdown-item" href="#">Date</a>
+                
+            <!-- Basic dropdown -->
+                    </div>
+                </div>
+            </div>
+        </div>
+            <!--Card content-->
+            <div class="card-body">
+
+              <!-- Table  -->
+              <table class="table table-hover">
+                <!-- Table head -->
+                <thead class="blue lighten-4">
+                  <tr>
+                    <th>sr.no</th>
+                    <th>Service's Name</th>
+                    <th>Location</th>
+                    <th>Date of Registration</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <!-- Table head -->
+
+                <!-- Table body -->
+                <tbody>
+                    {% for post in farmers_details %}
+                  <tr>
+                    <th scope="row">{{ post.id }}</th>
+                    <td>{{ post.name }}</td>
+                    <td>{{ post.location }}</td>
+                    <td>{{ post.date_registered }}</td>  
+                    <td>
+                    <a href="#"><i class="fas fa-edit mr-3 "></i></a>
+                    <a href="#"><i class="fas fa-eye mr-3 "></i></a>
+                    <a href="#"><i class="fas fa-trash mr-3 "></i></td></a>
+                  </tr>
+                  {% endfor %}
+                </tbody>
+                <!-- Table body -->
+              </table>
+              <!-- Table  -->
+
+            </div>
+
+          </div>
+          <!--/.Card-->
+
+        </div>
+        <!--Grid column-->
+
+      </div>
+      <!--Grid row-->
+
+      <br>
+<div class="col-lg-12 col-md-6 mb-4 ">
+
+    <!--Card-->
+    <div class="card  justify-content-center">
+  
+      <!-- Card header -->
+      <h3 class="card-header">Usage of FarAgri by Services</h3>
+  
+      <!--Card content-->
+      <div class="card-body">
+  
+        <canvas id="barChart"></canvas>
+  
+      </div>
+  
+    </div>
+    <!--/.Card-->
+  
+  </div>
+  <script>
+      
+var ctxB = document.getElementById("barChart").getContext('2d');
+var myBarChart = new Chart(ctxB, {
+type: 'bar',
+data: {
+labels: ["Nanded", "Aurangabad", "Beed", "Latur", "Parbhani", "Hingoli"],
+datasets: [{
+label: 'no. of services',
+data: [1200, 790, 300, 5000, 200, 930],
+backgroundColor: [
+'rgba(255, 99, 132, 0.2)',
+'rgba(255, 99, 132, 0.2)',
+'rgba(255, 99, 132, 0.2)',
+'rgba(255, 99, 132, 0.2)',
+'rgba(255, 99, 132, 0.2)',
+'rgba(255, 99, 132, 0.2)'
+],
+borderColor: [
+'rgba(255,99,132,1)',
+'rgba(255,99,132,1)',
+'rgba(255,99,132,1)',
+'rgba(255,99,132,1)',
+'rgba(255,99,132,1)',
+'rgba(255,99,132,1)'
+],
+borderWidth: 1
+}]
+},
+options: {
+scales: {
+yAxes: [{
+ticks: {
+beginAtZero: true
+}
+}]
+}
+}
+});
+  </script>  
+{%endblock content%}
