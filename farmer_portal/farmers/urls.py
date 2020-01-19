@@ -6,4 +6,5 @@ urlpatterns = [
     path('dashboard/', farmer_views.dashboard , name='farmer-dashboard'),
     path('addProduce/', farmer_views.addProduce , name='farmer-addProduce-Form'),
     path('check/', farmer_views.check , name='farmer-check'),
+    path('myapplications/', farmer_views.farmerApplications, name='farmer-applications')
 ]
