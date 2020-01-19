@@ -1,0 +1,28 @@
+{% extends "buyer/dashboard_base.html" %}
+{%block breadcrumb%}Dashboard{% endblock breadcrumb%}
+
+{%block content%}
+
+{% for post in all_posts %}
+        <article class="media content-section">
+          <img class="rounded-circle article-img" src="https://siloscordoba.com/wp-content/uploads/2018/09/Almacenar-granos-forma-segura.jpg">
+          <div class="media-body">
+            <div class="article-metadata">
+              <h3><a class="mr-2" style="color:black" href="#">{{ post.product }}</a>
+              </h3>
+              <h6 style="color:green">{{ post.id }}
+              </h6>
+              <h6 style="color:red">RS. {{ post.rs }}</h6>
+              <h6 style="color:green">Available quantity : {{ post.ava_qty }}</h6>
+            </div>
+            <h6 style="color:black">{{ post.name }} -<span style="color:red"> {{ post.contact }}</span></h6>
+              <small class="text-muted" style="color:black">{{ post.location }}</small>
+              <small class="text-muted" style="color:black; margin-left:74%">{{ post.date_posted }}</small>
+          <!-- <a href="#" class="btn btn-success" type="button" style="margin-left:80%">
+            <i class="fas fa-shopping-cart fa-lg mr-1"></i>Buy Now
+          </a> -->
+          </div>
+        </article>
+    {% endfor %}
+
+{%endblock content%}

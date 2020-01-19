@@ -1,0 +1,119 @@
+{% extends "buyer/dashboard_base_checkout.html" %}
+{%block breadcrumb%}Checkout{% endblock breadcrumb%}
+
+{%block content%}
+  <!--Main layout-->
+    <div class="container wow fadeIn">
+     <!--Grid row-->
+      <div class="row">
+        <!--Grid column-->
+        <div class="col-md-8 mb-4">
+          <!--Card-->
+          <div class="card">
+            <!--Card content-->
+            <form class="card-body">
+            <!--address-->
+              <div class="md-form mb-5">
+                <input type="text" id="address" class="form-control" placeholder="Delivery Address">
+                <label for="address" class="">Address</label>
+              </div>
+              <!--Grid row-->
+              <hr>
+              <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="save-info">
+                <label class="custom-control-label" for="save-info">Save this address for next time</label>
+              </div>
+              <hr>
+              <div class="d-block my-3">
+                <div class="custom-control custom-radio">
+                  <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked required>
+                  <label class="custom-control-label" for="credit">Credit card</label>
+                </div>
+                <div class="custom-control custom-radio">
+                  <input id="debit" name="paymentMethod" type="radio" class="custom-control-input" required>
+                  <label class="custom-control-label" for="debit">Debit card</label>
+                </div>
+                <div class="custom-control custom-radio">
+                  <input id="paypal" name="paymentMethod" type="radio" class="custom-control-input" required>
+                  <label class="custom-control-label" for="paypal">Paypal</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label for="cc-name">Name on card</label>
+                  <input type="text" class="form-control" id="cc-name" placeholder="" required>
+                  <small class="text-muted">Full name as displayed on card</small>
+                  <div class="invalid-feedback">
+                    Name on card is required
+                  </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="cc-number">Credit card number</label>
+                  <input type="text" class="form-control" id="cc-number" placeholder="" required>
+                  <div class="invalid-feedback">
+                    Credit card number is required
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-3 mb-3">
+                  <label for="cc-expiration">Expiration</label>
+                  <input type="text" class="form-control" id="cc-expiration" placeholder="" required>
+                  <div class="invalid-feedback">
+                    Expiration date required
+                  </div>
+                </div>
+                <div class="col-md-3 mb-3">
+                  <label for="cc-expiration">CVV</label>
+                  <input type="text" class="form-control" id="cc-cvv" placeholder="" required>
+                  <div class="invalid-feedback">
+                    Security code required
+                  </div>
+                </div>
+              </div>
+              <hr class="mb-4">
+              <button class="btn btn-primary btn-lg btn-block" type="submit">Continue to checkout</button>
+            </form>
+          </div>
+          <!--/.Card-->
+        </div>
+        <div class="col-md-4 mb-4">
+          <!-- Heading -->
+          <h4 class="d-flex justify-content-between align-items-center mb-3">
+            <span>Your Order</span>
+            <!-- <span class="badge badge-secondary badge-pill">3</span> -->
+          </h4>
+
+          <!-- Cart -->
+          <ul class="list-group mb-3 z-depth-1">
+            <img class=" article-img-checkout" src="https://siloscordoba.com/wp-content/uploads/2018/09/Almacenar-granos-forma-segura.jpg">
+          <div class="container">Quantity : 5kg</div>
+            <li class="list-group-item d-flex justify-content-between lh-condensed">
+                <h4 class="my-0">Soyabean</h4>
+              <h4 class="text-muted">₹ 5550</h4>
+              <br>
+          </li>
+
+            
+          </ul>
+          <!-- Cart -->
+
+          
+
+        </div>
+        <!--Grid column-->
+
+      </div>
+      <!--Grid row-->
+
+    </div>
+  <!--Main layout-->
+
+  
+
+
+    <hr class="my-4">
+    <script>
+        new WOW().init();
+    </script>
+    {% endblock %}

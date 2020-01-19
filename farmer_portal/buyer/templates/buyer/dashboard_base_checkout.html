@@ -1,40 +1,40 @@
-{% extends "portal/dashboard_layout.html" %}
+{% extends "portal/dashboard_layout_without_search.html" %}
 {% block title%} Dashboard {% endblock title%}
-{% block nav-title %} Farmer-Portal {%endblock nav-title%}
+{% block nav-title %} Buyer-Portal {%endblock nav-title%}
 {% block top-nav-list-items %}
 <li class="nav-item active">
-  <a class="nav-link waves-effect" href="{%url 'farmer-dashboard' %}">Home
+  <a class="nav-link waves-effect" href="#">Home
     <span class="sr-only">(current)</span>
   </a>
 </li>
 <li class="nav-item">
-  <a class="nav-link waves-effect" href="{%url 'farmer-addProduce-Form' %}" target="_blank">Add Produce</a>
+  <a class="nav-link waves-effect" href="#" target="_blank">My orders</a>
 </li>
 <li class="nav-item">
-  <a class="nav-link waves-effect" href="#" target="_blank">Revenues</a>
+  <a class="nav-link waves-effect" href="#" target="_blank">Offers</a>
 </li>
 <li class="nav-item">
   <a class="nav-link waves-effect" href="#" target="_blank">Feedback</a>
 </li>
 {% endblock top-nav-list-items%}
 {% block side-nav-list-items %}
- <a href="{%url 'farmer-dashboard' %}" class="list-group-item active waves-effect">
+ <a href="#" class="list-group-item active waves-effect">
   <i class="fas fa-chart-pie mr-3"></i>Dashboard
 </a>
 <a href="#" class="list-group-item list-group-item-action waves-effect">
   <i class="fas fa-user mr-3"></i>Profile
 </a>
-<a href="{%url 'farmer-addProduce-Form' %}" class="list-group-item list-group-item-action waves-effect">
-  <i class="fas fa-folder mr-3"></i>Add Produce
-</a>
-<a href="{%url 'farmer-applications' %}" class="list-group-item list-group-item-action waves-effect">
-  <i class="fas fa-users mr-3"></i>Applications
+<a href="#" class="list-group-item list-group-item-action waves-effect">
+  <i class="fas fa-folder mr-3"></i>My Orders
 </a>
 <a href="#" class="list-group-item list-group-item-action waves-effect">
-  <i class="fas fa-box-open mr-3"></i>Orders
+  <i class="fas fa-users mr-3"></i>Feedback
 </a>
 <a href="#" class="list-group-item list-group-item-action waves-effect">
   <i class="fas fa-exclamation-circle mr-3"></i>Complaints
+</a>
+<a href="#" class="list-group-item list-group-item-action waves-effect">
+  <i class="fas fa-box-open mr-3"></i>Contact Us
 </a>
 <a href="#" class="list-group-item list-group-item-action waves-effect">
   <i class="fas fa-cogs mr-3"></i>Services
