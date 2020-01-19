@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'farmers.apps.FarmersConfig',
+    'services.apps.ServicesConfig',
     'portal.apps.PortalConfig',
     'django.contrib.admin',
     'django.contrib.auth',
