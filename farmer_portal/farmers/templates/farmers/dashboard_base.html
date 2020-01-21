@@ -18,6 +18,13 @@
 </li>
 {% endblock top-nav-list-items%}
 {% block side-nav-list-items %}
+
+<a href="#" class="list-group-item waves-effect">
+  <center>
+    <img src="http://www.collegeinnovators.com/wp-content/uploads/2018/10/agriculture-icon-e1539991462686.png" class="img-fluid" width="50%" alt="Responsive image">
+  </center>
+</a>
+
  <a href="{%url 'farmer-dashboard' %}" class="list-group-item active waves-effect">
   <i class="fas fa-chart-pie mr-3"></i>Dashboard
 </a>
@@ -36,7 +43,7 @@
 <a href="#" class="list-group-item list-group-item-action waves-effect">
   <i class="fas fa-exclamation-circle mr-3"></i>Complaints
 </a>
-<a href="#" class="list-group-item list-group-item-action waves-effect">
+<a href="{% url 'farmer-services' %}" class="list-group-item list-group-item-action waves-effect">
   <i class="fas fa-cogs mr-3"></i>Services
 </a>
 {% endblock side-nav-list-items%}

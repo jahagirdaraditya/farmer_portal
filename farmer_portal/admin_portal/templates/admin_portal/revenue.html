@@ -1,0 +1,101 @@
+{% extends "admin_portal/without_search_layout.html" %}
+{%block breadcrumb%}Dashboard{% endblock breadcrumb%}
+{%block content%}
+<div class="container card">
+    <div class="row">
+    <div class="col-md-8">
+<h2>Revenue generated : </h2>
+<div>
+    <canvas id="pieChart" style="max-width: 70%;"></canvas>
+  </div>
+</div>
+
+<div class="col-md-4">
+    <!-- demo -->
+
+    <!-- dropdown -->
+    <!-- Basic dropdown -->
+    <button class=" dropdown-toggle mr-4" data-toggle="dropdown"
+    aria-haspopup="true" aria-expanded="false" style="background:transparent;border-style:none">
+   Revenue</button>
+<div class="dropdown-menu">
+<h6 class="dropdown-header">According to</h6>
+<button type="button" class="dropdown-item btn" data-toggle="modal" data-target="#basicExampleModal">
+    Month
+  </button>
+  <button type="button" class="dropdown-item btn" data-toggle="modal" data-target="#basicExampleModal1">
+    Year
+  </button>
+
+<!-- Basic dropdown -->
+    <!-- /dropdown -->
+      <!-- Modal -->
+      <div class="modal fade" id="basicExampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              ...jsnoioxxxk
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /modal1 -->
+
+      <!-- modal2 -->
+      <!-- Modal -->
+      <div class="modal fade" id="basicExampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              ...ftgyhjkl
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /modal2 -->
+    <!-- /demo -->
+</div>
+</div>
+</div>
+
+  <script>
+      //pie
+    var ctxP = document.getElementById("pieChart").getContext('2d');
+    var myPieChart = new Chart(ctxP, {
+      type: 'pie',
+      data: {
+        labels: ["Buyers", "Farmers", "Services"],
+        datasets: [{
+          data: [200, 150, 100],
+          backgroundColor: ["#F7464A", "#46BFBD", "#FDB45C"],
+          hoverBackgroundColor: ["#FF5A5E", "#5AD3D1", "#FFC870"]
+        }]
+      },
+      options: {
+        responsive: true
+      }
+    });
+  </script>
+{% endblock %}

@@ -2,6 +2,14 @@ from django.shortcuts import render, redirect
 import django.middleware.csrf
 from django.contrib import messages
 # from .forms import AddProduceForm
+
+def orders(request):
+    context={
+        'details': farmer_details,
+        'transactions':transactions,
+    }
+    return render(request, 'farmers/orders.html', context)
+
 def dashboard(request):
     context={
         'details': farmer_details,
@@ -23,11 +31,27 @@ def addProduce(request):
 def farmerApplications(request):
     return render(request, 'farmers/farmer-applications.html')
 
+
+def services(request):
+    return render(request, 'farmers/services.html')
+
+
+def complaint(request):
+    context={
+        'complaints':complaints,
+    }
+    return render(request, 'farmers/complaints.html', context)
+
+
 def check(request):
     context={
         'details': farmer_details,
     }
     return render(request, 'farmers/dashboard00.html', context)
+
+
+def success_stories(request):
+    return render(request, 'farmers/success_stories.html')
 
 
 transactions = [
@@ -76,4 +100,20 @@ farmer_details = [
     {
     'name': 'Samiksha Kulkarni',
     }
+]
+
+complaints = [
+    {
+        'id' : 'CID123',
+        'role' : 'Service',
+        'date_of_Complaint' : '15-01-2020'
+    },
+
+    {
+        'id' : 'CID124',
+        'role' : 'Farmer',
+        'date_of_Complaint' : '25-01-2020'
+
+    }
+    
 ]

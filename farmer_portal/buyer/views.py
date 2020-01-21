@@ -1,6 +1,5 @@
-from django.shortcuts import render
-
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.contrib import messages
 all_posts = [
     {
         'product':'Soyabean Oil Seed',
@@ -137,7 +136,19 @@ def buy_now(request):
     return render(request, 'buyer/buy_now.html',context)
 
 def checkout(request):
+    if request.POST:
+        messages.success(request,f'Tumchya acc mdhun sgl balance gelel ahe Successfully!')   
+        return redirect('buyer-dashboard')
     return render(request, 'buyer/checkout.html')
 
 def profile(request):
     return render(request, 'buyer/profile.html')
+
+
+def success_stories(request):
+    return render(request, 'buyer/success_stories.html')
+
+
+def feedback(request):
+    return render(request, 'buyer/feedback.html')
+

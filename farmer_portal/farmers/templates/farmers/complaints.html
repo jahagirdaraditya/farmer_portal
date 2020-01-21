@@ -1,11 +1,48 @@
-{% extends "buyer/dashboard_base_checkout.html" %}
-{%block breadcrumb%}Complaints{% endblock breadcrumb%}
-
+{% extends "farmers/dashboard_base.html" %}
+{%block breadcrumb%}Complaint{% endblock breadcrumb%}
 {%block content%}
 
+<div class="card-body">
+<h4>Previous Complaints</h4>
+    <!-- Table  -->
+    <table class="table table-hover">
+      <!-- Table head -->
+      <thead class="blue lighten-4">
+        <tr>
+          <th>Complaint Id</th>
+          <th>On role</th>
+          <th>Posted on</th>
+          
+        </tr>
+      </thead>
+      <!-- Table head -->
+
+      <!-- Table body -->
+      <tbody>
+          {% for post in complaints %}
+        <tr>
+          <th scope="row">{{ post.id }}</th>
+          <td>{{ post.role }}</td>
+          <td>{{ post.date_of_Complaint }}</td>
+          
+        </tr>
+        {% endfor %}
+      </tbody>
+      <!-- Table body -->
+    </table>
+    <!-- Table  -->
+
+  </div>
+
+
+  <!-- Form -->
+
+    <!-- /form -->
+
      <!--Card-->
-     <div class="card col-sm-8" style="margin-left:15%">
+     <div class="card">
         <!--Card content-->
+        <h4>New Complaint</h4>
         <form class="card-body">
         <!--address-->
           <div class="md-form mb-5">
@@ -30,4 +67,4 @@
       </div>
       <!--/.Card-->
       
-{% endblock content %}
+{% endblock %}
