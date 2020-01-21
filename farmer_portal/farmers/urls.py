@@ -5,6 +5,7 @@ urlpatterns = [
     # path('', farmer_views.dashboard , name='farmer-dashboard'),
     path('dashboard/', farmer_views.dashboard , name='farmer-dashboard'),
     path('addProduce/', farmer_views.addProduce , name='farmer-addProduce-Form'),
+    path('orders/', farmer_views.orders , name='farmer-orders-Form'),
     path('check/', farmer_views.check , name='farmer-check'),
     path('myapplications/', farmer_views.farmerApplications, name='farmer-applications'),
     path('services/', farmer_views.services, name='farmer-services'),
