@@ -1,4 +1,5 @@
 from django.shortcuts import render,  get_object_or_404
+from django.contrib import messages
 # Create your views here.
 posts = [
     {
@@ -21,4 +22,16 @@ def home(request):
     context = {
         'posts' : posts
     }
+    if request.POST:
+        # data = request.POST
+        # print(data)
+        messages.success(request, f'Account Registered successfully')
     return render(request, 'portal/home.html', context)
+
+def login(request):
+    if request.POST:
+        data = request.POST.dict()
+        role = (data.get("role"))
+        if role == 1:
+            return redirect('farmer-dashboard')
+    return render(request, 'portal/home.html')

@@ -117,3 +117,5 @@ def services(request):
     }
     return render(request, 'admin_portal/services.html', context)
 
+def revenue(request):
+    return render(request, 'admin_portal/revenue.html')
