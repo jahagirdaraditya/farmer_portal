@@ -6,6 +6,10 @@ from farmers import views as farmer_views
 urlpatterns = [
     path('', portal_views.home , name='portal-home'),
     path('farmer/', include('farmers.urls')),
+<<<<<<< HEAD
+    path('service/', include('services.urls')),
+=======
     path('buyer/', include('buyer.urls')),
     path('admin_portal/', include('admin_portal.urls')),
+>>>>>>> 41e5102c38803e61a545fd2defe14d107cc28601
 ]

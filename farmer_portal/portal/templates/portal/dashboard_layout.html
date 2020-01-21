@@ -154,7 +154,6 @@ a.article-title:hover {
 
   <!--Main Navigation-->
   <header>
-
     <!-- Navbar -->
     <nav class="navbar fixed-top navbar-expand-lg navbar-light white scrolling-navbar">
       <div class="container-fluid">
@@ -271,6 +270,13 @@ a.article-title:hover {
 
       </div>
       <!-- Heading -->
+      {% if messages %}
+        {% for message in messages %}
+          <div class="alert alert-{{ message.tags }}">
+            {{message}}
+          </div>
+        {% endfor %}
+      {% endif %}
       {% block content %}{% endblock content %}
     </div>
   </main>
@@ -339,6 +345,7 @@ a.article-title:hover {
     new WOW().init();
 
   </script>
+
 
   <!-- Charts -->
   <script>
@@ -541,6 +548,9 @@ a.article-title:hover {
     });
 
   </script>
+
+{% block for_script %}{% endblock for_script%}
+
 </body>
 
 </html>

@@ -1,4 +1,35 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+import django.middleware.csrf
+from django.contrib import messages
+# from .forms import AddProduceForm
+def dashboard(request):
+    context={
+        'details': farmer_details,
+        'transactions':transactions,
+    }
+    return render(request, 'farmers/dashboard.html', context)
+
+def addProduce(request):
+    if request.method == 'POST':
+        print(request.POST)
+        messages.success(request, f'Post successfully created! Our Team will verify the post and update you shortly.')
+        return redirect('farmer-dashboard')
+    context={
+        'details': farmer_details,
+        'csrf-token': django.middleware.csrf.get_token(request),
+    }
+    return render(request, 'farmers/add_produce.html', context)
+
+def farmerApplications(request):
+    return render(request, 'farmers/farmer-applications.html')
+
+def check(request):
+    context={
+        'details': farmer_details,
+    }
+    return render(request, 'farmers/dashboard00.html', context)
+
+
 transactions = [
     {
         'name':'Omkar Deshpande',
@@ -46,20 +77,3 @@ farmer_details = [
     'name': 'Samiksha Kulkarni',
     }
 ]
-def dashboard(request):
-    context={
-        'details': farmer_details,
-        'transactions':transactions,
-    }
-    return render(request, 'farmers/dashboard.html', context)
-
-def addProduce(request):
-    context={
-        'details': farmer_details,
-    }
-    return render(request, 'farmers/add_produce.html', context)
-def check(request):
-    context={
-        'details': farmer_details,
-    }
-    return render(request, 'farmers/dashboard00.html', context)
