@@ -189,24 +189,12 @@ a.article-title:hover {
 
           <!-- Right -->
           <ul class="navbar-nav nav-flex-icons">
-            <li class="nav-item">
-              <a href="#" class="nav-link waves-effect" target="_blank">
-                <i class="fab fa-facebook-f"></i>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="nav-link waves-effect" target="_blank">
-                <i class="fab fa-twitter"></i>
-              </a>
-            </li>
-            <li class="nav-item">
-              <!-- <a href="#" class="nav-link border border-light rounded waves-effect"
-                target="_blank">
-                <i class="fab fa-github mr-2"></i>
-              </a> -->
-            </li>
+            <select class="browser-default custom-select">
+              <option selected>Actions</option>
+              <option value="1">My Profile</option>
+              <option value="2">Logout</option>
+            </select>
           </ul>
-
         </div>
 
       </div>
@@ -215,11 +203,9 @@ a.article-title:hover {
 
     <!-- Sidebar -->
     <div class="sidebar-fixed position-fixed">
-
       <a class="logo-wrapper waves-effect">
-        <img src="#" class="img-fluid" alt="">
+        <img src="http://www.collegeinnovators.com/wp-content/uploads/2018/10/agriculture-icon-e1539991462686.png" width="80%" height="80%" style="max-height: 100%" class="img-fluid" alt="">
       </a>
-
       <div class="list-group list-group-flush">
         {% block side-nav-list-items %}{% endblock side-nav-list-items%}
         <!--
@@ -244,11 +230,11 @@ a.article-title:hover {
     <div class="container-fluid mt-5">
 
       <!-- Heading -->
+      {% block user%}{% endblock user%}
       <div class="card mb-4 wow fadeIn">
 
         <!--Card content-->
         <div class="card-body d-sm-flex justify-content-between">
-
           <h4 class="mb-2 mb-sm-0 pt-1">
             <a href="#" target="_blank">FarAgri</a>
             <span>/</span>
