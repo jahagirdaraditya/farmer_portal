@@ -8,4 +8,5 @@ urlpatterns = [
     path('farmer/', include('farmers.urls')),
     path('buyer/', include('buyer.urls')),
     path('admin_portal/', include('admin_portal.urls')),
+    path('login/', portal_views.login, name='login')
 ]
