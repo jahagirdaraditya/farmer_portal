@@ -43,7 +43,7 @@ def check(request):
 
 
 def success_stories(request):
-    return render(request, 'buyer/success_stories.html')
+    return render(request, 'farmers/success_stories.html')
 
 
 transactions = [
