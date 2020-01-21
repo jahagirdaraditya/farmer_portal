@@ -1,0 +1,66 @@
+{% extends "farmers/dashboard_base.html" %}
+{% load crispy_forms_tags %}
+{%block breadcrumb%}Add Produce{% endblock breadcrumb%}
+{%block content%}
+<!--Grid row-->
+<div class="row wow fadeIn">
+    <!--Grid column-->
+    <div class="col-md-12 mb-4">
+        <!--Card-->
+        <div class="card">
+            <!--Card content-->
+            <div class="card-body">
+            <!-- Table  -->
+            <table class="table table-hover">
+              <form class="d-flex justify-content-center">
+                <!-- Default input -->
+                <tr>
+                  <td>#</td>
+                  <td> <input type="search" placeholder="Buyer name" aria-label="Search" class="form-control"> </td>
+                  <td> <input type="search" placeholder="Address" aria-label="Search" class="form-control"> </td>
+                  <td> <input type="search" placeholder="Product" aria-label="Search" class="form-control"> </td>
+                  <td> <input type="search" placeholder="Quantity" aria-label="Search" class="form-control"> </td>
+                  <td> 
+                    <button class="btn btn-primary btn-sm my-0 p" type="submit" >View</button>
+                  </td>
+                </tr>
+              </form>
+                <!-- Table head -->
+                <thead class="blue lighten-4">
+                <tr>
+                    <th>#</th>
+                    <th>Buyer name</th>
+                    <th>Address</th>
+                    <th>Product</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                </tr>
+                </thead>
+                <!-- Table head -->
+  
+                <!-- Table body -->
+                <tbody>
+                    {% for t in transactions %}
+                    <tr>
+                      <th scope="row">{{ forloop.counter }}</th>
+                      <td>{{ t.name }}</td>
+                      <td>{{ t.location }}</td>
+                      <td>{{ t.product }}</td>
+                      <td>{{ t.qty }}</td>
+                      <td>1000</td>
+                    </tr>
+                    {% endfor %}
+                  </tbody>
+                <!-- Table body -->
+            </table>
+            <!-- Table  -->
+            </div>
+        </div>
+        <!--/.Card-->
+    </div>
+    <!--Grid column-->
+  </div>
+  <!--Grid row-->
+
+
+{%endblock content%}

@@ -2,6 +2,14 @@ from django.shortcuts import render, redirect
 import django.middleware.csrf
 from django.contrib import messages
 # from .forms import AddProduceForm
+
+def orders(request):
+    context={
+        'details': farmer_details,
+        'transactions':transactions,
+    }
+    return render(request, 'farmers/orders.html', context)
+
 def dashboard(request):
     context={
         'details': farmer_details,
