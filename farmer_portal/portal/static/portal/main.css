@@ -1,7 +1,13 @@
+/* font-family: 'Manjari', sans-serif;
+font-family: 'Nunito', sans-serif;
+font-family: 'Nunito Sans', sans-serif;
+font-family: 'Montserrat', sans-serif;
+font-family: 'Poppins', sans-serif; */
 body {
   background: #fafafa;
   color: #333333;
   margin-top: 5rem;
+  font-family: 'Poppins', sans-serif !important;  
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -134,4 +140,3 @@ a.article-title:hover {
   border-bottom: 1px solid #E6E6E6;
   font-weight: 300;
 }
-
