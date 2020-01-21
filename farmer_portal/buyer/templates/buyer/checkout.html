@@ -11,7 +11,8 @@
           <!--Card-->
           <div class="card">
             <!--Card content-->
-            <form class="card-body">
+            <form class="card-body" method="POST">
+              {% csrf_token %}
             <!--address-->
               <div class="md-form mb-5">
                 <input type="text" id="address" class="form-control" placeholder="Delivery Address">

@@ -8,37 +8,33 @@
   </a>
 </li>
 <li class="nav-item">
-  <a class="nav-link waves-effect" href="#" target="_blank">My orders</a>
+  <a class="nav-link waves-effect" href="{%url 'buyer-my-orders' %}" target="_blank">My orders</a>
 </li>
+
 <li class="nav-item">
-  <a class="nav-link waves-effect" href="#" target="_blank">Offers</a>
-</li>
-<li class="nav-item">
-  <a class="nav-link waves-effect" href="#" target="_blank">Feedback</a>
+  <a class="nav-link waves-effect" href="{%url 'buyer-feedback' %}" target="_blank">Feedback</a>
 </li>
 {% endblock top-nav-list-items%}
 {% block side-nav-list-items %}
- <a href="#" class="list-group-item active waves-effect">
+ <a href="{%url 'buyer-dashboard' %}" class="list-group-item active waves-effect">
   <i class="fas fa-chart-pie mr-3"></i>Dashboard
 </a>
 <a href="#" class="list-group-item list-group-item-action waves-effect">
   <i class="fas fa-user mr-3"></i>Profile
 </a>
-<a href="#" class="list-group-item list-group-item-action waves-effect">
+<a href="{%url 'buyer-my-orders' %}" class="list-group-item list-group-item-action waves-effect">
   <i class="fas fa-folder mr-3"></i>My Orders
 </a>
-<a href="#" class="list-group-item list-group-item-action waves-effect">
+<a href="{%url 'buyer-feedback' %}" class="list-group-item list-group-item-action waves-effect">
   <i class="fas fa-users mr-3"></i>Feedback
 </a>
-<a href="#" class="list-group-item list-group-item-action waves-effect">
+<a href="{%url 'buyer-complaint' %}" class="list-group-item list-group-item-action waves-effect">
   <i class="fas fa-exclamation-circle mr-3"></i>Complaints
 </a>
 <a href="#" class="list-group-item list-group-item-action waves-effect">
   <i class="fas fa-box-open mr-3"></i>Contact Us
 </a>
-<a href="#" class="list-group-item list-group-item-action waves-effect">
-  <i class="fas fa-cogs mr-3"></i>Services
-</a>
+
 {% endblock side-nav-list-items%}
 {% block content %}
 {% endblock content %}

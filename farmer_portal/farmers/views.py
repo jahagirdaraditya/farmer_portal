@@ -23,6 +23,18 @@ def addProduce(request):
 def farmerApplications(request):
     return render(request, 'farmers/farmer-applications.html')
 
+
+def services(request):
+    return render(request, 'farmers/services.html')
+
+
+def complaint(request):
+    context={
+        'complaints':complaints,
+    }
+    return render(request, 'farmers/complaints.html', context)
+
+
 def check(request):
     context={
         'details': farmer_details,
@@ -76,4 +88,20 @@ farmer_details = [
     {
     'name': 'Samiksha Kulkarni',
     }
+]
+
+complaints = [
+    {
+        'id' : 'CID123',
+        'role' : 'Service',
+        'date_of_Complaint' : '15-01-2020'
+    },
+
+    {
+        'id' : 'CID124',
+        'role' : 'Farmer',
+        'date_of_Complaint' : '25-01-2020'
+
+    }
+    
 ]
