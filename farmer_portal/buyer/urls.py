@@ -12,4 +12,3 @@ urlpatterns = [
     path('feedback/', buyer_views.feedback , name='buyer-feedback'),
     path('success_stories/', buyer_views.success_stories, name='buyer-success_stories'),
 ]
-

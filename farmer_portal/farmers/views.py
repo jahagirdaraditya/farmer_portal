@@ -42,6 +42,10 @@ def check(request):
     return render(request, 'farmers/dashboard00.html', context)
 
 
+def success_stories(request):
+    return render(request, 'buyer/success_stories.html')
+
+
 transactions = [
     {
         'name':'Omkar Deshpande',
