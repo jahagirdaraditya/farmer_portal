@@ -141,3 +141,8 @@ def checkout(request):
 
 def profile(request):
     return render(request, 'buyer/profile.html')
+
+
+def success_stories(request):
+    return render(request, 'buyer/success_stories.html')
+

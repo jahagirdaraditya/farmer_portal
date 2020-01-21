@@ -9,5 +9,6 @@ urlpatterns = [
     path('my_orders/', buyer_views.my_order , name='buyer-my-orders'),
     path('complaint/', buyer_views.complaint , name='buyer-complaint'),
     path('profile/', buyer_views.profile , name='buyer-profile'),
+    path('success_stories/', buyer_views.success_stories, name='buyer-success_stories'),
 ]
 
