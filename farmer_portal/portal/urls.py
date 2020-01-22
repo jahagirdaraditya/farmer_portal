@@ -12,17 +12,7 @@ urlpatterns = [
     path('service/', include('services.urls')),
     path('buyer/', include('buyer.urls')),
     path('admin_portal/', include('admin_portal.urls')),
-<<<<<<< HEAD
     path('login/', portal_views.login, name='login'),
-    path('view_post/', portal_views.view_post, name='view_post')
-=======
-<<<<<<< HEAD
-    path('login/', portal_views.login, name='login')
-=======
-    path('login/', portal_views.login, name='login'),
+    path('view_post/', portal_views.view_post, name='view_post'),
     path('translate/', portal_views.translate, name='translate'),
-
-
->>>>>>> 76c73be4168616b0ee8baf0b13fa9d1b1d6e7850
->>>>>>> 6999fcd0c62a4b0eb5f9721540d981c2c1b1bf27
 ]

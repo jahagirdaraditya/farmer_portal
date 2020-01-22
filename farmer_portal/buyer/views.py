@@ -100,15 +100,9 @@ buy_now_details = [
     'rs':'5500',
     'name':'Nanded FPO',
     'date_posted' : 'Fri, Oct 18th 2019',
-<<<<<<< HEAD
     'status' : 'Out for delivery',
     'reason' : 'Packaging done',
     
-=======
-    'status' : 'Cancelled',
-    'reason' : 'Shipment Cancelled',
-
->>>>>>> 6999fcd0c62a4b0eb5f9721540d981c2c1b1bf27
     },
     {
     'transaction_id':'OD989877666',
@@ -143,11 +137,7 @@ def buy_now(request):
 
 def checkout(request):
     if request.POST:
-<<<<<<< HEAD
         messages.success(request,f'Thank you!')   
-=======
-        messages.success(request,f'Tumchya acc mdhun sgl balance gelel ahe Successfully!')
->>>>>>> 6999fcd0c62a4b0eb5f9721540d981c2c1b1bf27
         return redirect('buyer-dashboard')
     return render(request, 'buyer/checkout.html')
 
@@ -163,11 +153,8 @@ def feedback(request):
     return render(request, 'buyer/feedback.html')
 
 
-<<<<<<< HEAD
 def out_for_delivery(request):
     return render(request, 'buyer/out_for_delivery.html')
 
-=======
 def order_confirm(request):
     return render(request, 'buyer/order-confirm.html')
->>>>>>> 6999fcd0c62a4b0eb5f9721540d981c2c1b1bf27
