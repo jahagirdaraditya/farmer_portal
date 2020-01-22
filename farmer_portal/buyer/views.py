@@ -102,7 +102,7 @@ buy_now_details = [
     'date_posted' : 'Fri, Oct 18th 2019',
     'status' : 'Cancelled',
     'reason' : 'Shipment Cancelled',
-    
+
     },
     {
     'transaction_id':'OD989877666',
@@ -117,7 +117,7 @@ buy_now_details = [
 def dashboard(request):
     context={
         'all_posts':all_posts,
-        
+
     }
     return render(request, 'buyer/dashboard.html', context)
 
@@ -137,7 +137,7 @@ def buy_now(request):
 
 def checkout(request):
     if request.POST:
-        messages.success(request,f'Tumchya acc mdhun sgl balance gelel ahe Successfully!')   
+        messages.success(request,f'Tumchya acc mdhun sgl balance gelel ahe Successfully!')
         return redirect('buyer-dashboard')
     return render(request, 'buyer/checkout.html')
 
@@ -152,3 +152,6 @@ def success_stories(request):
 def feedback(request):
     return render(request, 'buyer/feedback.html')
 
+
+def order_confirm(request):
+    return render(request, 'buyer/order-confirm.html')

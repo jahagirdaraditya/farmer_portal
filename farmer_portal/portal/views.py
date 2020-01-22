@@ -48,3 +48,6 @@ def login(request):
         else:
             messages.warning(request, f'Please select a role.')
     return render(request, 'portal/home.html')
+
+def translate(request):
+    return render(request, 'portal/translate.html')

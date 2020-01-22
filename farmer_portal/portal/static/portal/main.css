@@ -7,7 +7,15 @@ body {
   background: #fafafa;
   color: #333333;
   margin-top: 5rem;
-  font-family: 'Poppins', sans-serif !important;  
+  font-family: 'Poppins', sans-serif !important;
+}
+body.goog-te-banner {
+    visibility: hidden;
+    display: none;
+}
+.skiptranslate {
+    visibility: hidden;
+    display: contents;
 }
 
 h1, h2, h3, h4, h5, h6 {
