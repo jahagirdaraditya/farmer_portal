@@ -2,37 +2,49 @@
 {%block breadcrumb%}Complaint{% endblock breadcrumb%}
 {%block content%}
 
-<div class="card-body">
-<h4>Previous Complaints</h4>
-    <!-- Table  -->
-    <table class="table table-hover">
-      <!-- Table head -->
-      <thead class="blue lighten-4">
-        <tr>
-          <th>Complaint Id</th>
-          <th>On role</th>
-          <th>Posted on</th>
-          
-        </tr>
-      </thead>
-      <!-- Table head -->
-
-      <!-- Table body -->
-      <tbody>
-          {% for post in complaints %}
-        <tr>
-          <th scope="row">{{ post.id }}</th>
-          <td>{{ post.role }}</td>
-          <td>{{ post.date_of_Complaint }}</td>
-          
-        </tr>
-        {% endfor %}
-      </tbody>
-      <!-- Table body -->
-    </table>
-    <!-- Table  -->
-
+<div class="card">
+  <!--Card content-->
+  <br>
+  <div class="row">
+    <div class="col">
+      <h4>Previous Complaints</h4>
+    </div>
+    <div class="col">
+  <button class="btn btn-primary btn-sm my-0 p col-sm-2 ml float-right" type="submit" data-toggle="modal" data-target="#modalLoginForm">View</button>
+    </div>
   </div>
+  <br>
+  <!-- Table  -->
+  <table class="table table-hover">
+    <!-- Table head -->
+    <thead class="blue lighten-4">
+      <tr>
+        <th>Complaint Id</th>
+        <th>On role</th>
+        <th>Posted on</th>
+        
+      </tr>
+    </thead>
+    <!-- Table head -->
+
+    <!-- Table body -->
+    <tbody>
+        {% for post in complaints %}
+      <tr>
+        <th scope="row">{{ post.id }}</th>
+        <td>{{ post.role }}</td>
+        <td>{{ post.date_of_Complaint }}</td>
+        
+      </tr>
+      {% endfor %}
+    </tbody>
+    <!-- Table body -->
+  </table>
+  <!-- Table  -->
+</div>
+
+
+
 
 
   <!-- Form -->
@@ -40,31 +52,68 @@
     <!-- /form -->
 
      <!--Card-->
-     <div class="card">
-        <!--Card content-->
+     <!-- <div class="card">
+        Card content
         <h4>New Complaint</h4>
         <form class="card-body">
-        <!--address-->
+        address
           <div class="md-form mb-5">
             <input type="text" class="form-control" placeholder="On role">
-            
-
-            <!-- <label for="courier_services" >On role</label>
                 <select class="custom-select d-block w-100" id="courirs" required>
+                  <option disable>On role</option>
                   <option value="1">Farmer</option>
                   <option value="2">Courier Services</option>
                   <option value="3">Faragri</option>
-                </select> -->
+                </select>
 
                 <textarea type="text" id="message" name="message" rows="2" placeholder="Your complaint" class="form-control md-textarea"></textarea>
                  
                         
           </div>
-          <!--Grid row-->
+          Grid row
    
           <button class="btn btn-primary btn-sm" style="margin-left:45%" type="submit">Submit</button>
+          <hr>
+          
         </form>
-      </div>
+      </div> -->
       <!--/.Card-->
+      
+
+<!-- Modal -->
+<div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Add product</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <select class="custom-select d-block w-100" id="courirs" required>
+            <option disable>On role</option>
+            <option value="1">Farmer</option>
+            <option value="2">Courier Services</option>
+            <option value="3">Faragri</option>
+          </select>
+        </div>
+        
+
+        <div class="md-form mb-4">
+          
+          <input type="password" id="defaultForm-pass" class="form-control validate">
+          <label data-error="wrong" data-success="right" for="defaultForm-pass">Your complaint</label>
+        </div>
+
+      </div>
+      <div class="modal-footer d-flex justify-content-center">
+        <a class="btn btn-default" href="{% url 'farmer-complaints' %}">Add</a>
+      </div>
+    </div>
+  </div>
+</div>
       
 {% endblock %}

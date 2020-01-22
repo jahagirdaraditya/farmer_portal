@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'admin_portal.apps.AdminPortalConfig',
     'buyer.apps.BuyerConfig',
     'farmers.apps.FarmersConfig',
+    'fpo.apps.FpoConfig',
     'services.apps.ServicesConfig',
     'portal.apps.PortalConfig',
     'crispy_forms',

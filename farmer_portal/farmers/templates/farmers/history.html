@@ -1,6 +1,11 @@
-{% extends "services/service_base.html" %}
+{% extends "farmers/dashboard_base.html" %}
 
-{% block main_body %}
+{% load crispy_forms_tags %}
+
+{%block breadcrumb%}FPO List{% endblock breadcrumb%}
+
+{%block content%}
+
 <!--Grid row-->
 <div class="row wow fadeIn">
   <!--Grid column-->
@@ -28,10 +33,12 @@
               <thead class="blue lighten-4">
               <tr>
                   <th>#</th>
-                  <th>Transaction Id</th>
-                  <th>Seller</th>
-                  <th>Buyer</th>
-                  <th>Status</th>
+                  <th>FPO Id</th>
+                  <th>Date</th>
+                  <th>Product</th>
+                  <th>Quantity</th>
+                  <th>Remark</th>
+                  <th>Price</th>
                   <th></th>
               </tr>
               </thead>
@@ -42,10 +49,12 @@
                   {% for order in order_details %}
                       <tr>
                           <th scope="row">{{ forloop.counter }}</th>
-                          <td>{{ order.Transaction_Id }}</td>
-                          <td>{{ order.Seller }}</td>
-                          <td>{{ order.Buyer }}</td>
-                          <td>{{ order.Status }}</td>
+                          <td>{{ order.Fpo_Id }}</td>
+                          <td>{{ order.Date }}</td>
+                          <td>{{ order.Product }}</td>
+                          <td>{{ order.Quantity }}</td>
+                          <td>{{ order.Remark }}</td>
+                          <td>{{ order.Price }}</td>
                           <td><button class="btn btn-primary btn-sm my-0 p" type="submit" data-toggle="modal" data-target="#basicExampleModal">View</button></td>
                       </tr>
                   {% endfor %}
@@ -61,54 +70,5 @@
 </div>
 <!--Grid row-->
 
-<!-- Modal -->
-<div class="modal fade" id="basicExampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-aria-hidden="true">
-
-<!-- Add .modal-dialog-centered to .modal-dialog to vertically center the modal -->
-<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-
-
-  <div class="modal-content">
-    <div class="modal-header">
-      <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-      </button>
-    </div>
-    <div class="modal-body">
-      <div class="container">
-          <h3>Ship from</h3>
-          <div class="container">
-              <h4>Name</h4>
-              Address <br>
-              City <br>
-              state <br>
-              country - Postcode<br> 
-              Mobile no
-          </div>
-      </div>
-      <hr>
-      <div>
-          <h4>Name</h4>
-          One of three columns<br>
-                  One of three columns <br>
-                  One of three columns
-      </div>
-    </div>
-    <!-- <div class="modal-footer">
-      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      <button type="button" class="btn btn-primary">Save changes</button>
-    </div> -->
-  </div>
-</div>
-</div>
-                 
-{% endblock  %}
-
-
-
-
-
-
+{%endblock content%}
 

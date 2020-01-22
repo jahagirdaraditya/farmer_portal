@@ -1,4 +1,4 @@
-from django.shortcuts import render,  get_object_or_404
+from django.shortcuts import render,  get_object_or_404, redirect
 from django.contrib import messages
 # Create your views here.
 posts = [
@@ -32,6 +32,19 @@ def login(request):
     if request.POST:
         data = request.POST.dict()
         role = (data.get("role"))
-        if role == 1:
+        print(role)
+        if role == '1':
+            print(role)
             return redirect('farmer-dashboard')
+        elif role == '2':
+            print(role)
+            return redirect('fpo-dashboard')
+        elif role == '3':
+            print(role)
+            return redirect('buyer-dashboard')
+        elif role == '4':
+            print(role)
+            return redirect('service-dashboard')
+        else:
+            messages.warning(request, f'Please select a role.')
     return render(request, 'portal/home.html')

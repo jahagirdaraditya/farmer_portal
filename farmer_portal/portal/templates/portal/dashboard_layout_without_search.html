@@ -3,7 +3,7 @@
   Press ctrl + F  and search for thr following blocks within this template
     nav-title
     top-nav-list-items
-    side-nav-list-items   
+    side-nav-list-items
  -->
  {% load static %}
  <!DOCTYPE html>
@@ -13,11 +13,6 @@
    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
    <meta http-equiv="x-ua-compatible" content="ie=edge">
    <title>{% block title %}{% endblock title%}</title>
-   <!-- carosoul -->
-   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  
    <!-- chart.js -->
    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.js"></script>
  
@@ -31,6 +26,9 @@
    <!-- Your custom styles (optional) -->
    <link href="{% static 'portal/css/style.min.css' %}" rel="stylesheet">
    <style>
+     body{
+       font-family: 'Poppins', sans-serif !important;
+     }
      .map-container{
      overflow:hidden;
      padding-bottom:56.25%;
@@ -147,47 +145,6 @@
    display: table;
  }
  
- 
-/* farmers services*/
-/* Style the tab */
-.tab {
-  overflow: hidden;
-  border: 1px solid #ccc;
-  background-color: #f1f1f1;
-}
-
-/* Style the buttons inside the tab */
-.tab button {
-  background-color: inherit;
-  float: left;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  padding: 14px 16px;
-  transition: 0.3s;
-  font-size: 17px;
-}
-
-/* Change background color of buttons on hover */
-.tab button:hover {
-  background-color: #ddd;
-}
-
-/* Create an active/current tablink class */
-.tab button.active {
-  background-color: #ccc;
-}
-
-/* Style the tab content */
-.tabcontent {
-  display: none;
-  padding: 6px 12px;
-  border: 1px solid #ccc;
-  border-top: none;
-}
-/* /farmers services*/
-
-
    </style>
  </head>
  
@@ -195,7 +152,6 @@
  
    <!--Main Navigation-->
    <header>
- 
      <!-- Navbar -->
      <nav class="navbar fixed-top navbar-expand-lg navbar-light white scrolling-navbar">
        <div class="container-fluid">
@@ -233,24 +189,12 @@
  
            <!-- Right -->
            <ul class="navbar-nav nav-flex-icons">
-             <li class="nav-item">
-               <a href="#" class="nav-link waves-effect" target="_blank">
-                 <i class="fab fa-facebook-f"></i>
-               </a>
-             </li>
-             <li class="nav-item">
-               <a href="#" class="nav-link waves-effect" target="_blank">
-                 <i class="fab fa-twitter"></i>
-               </a>
-             </li>
-             <li class="nav-item">
-               <!-- <a href="#" class="nav-link border border-light rounded waves-effect"
-                 target="_blank">
-                 <i class="fab fa-github mr-2"></i>
-               </a> -->
-             </li>
+             <select class="browser-default custom-select">
+               <option selected>Actions</option>
+               <option value="1">My Profile</option>
+               <option value="2"><a href="{% url 'portal-home' %}">Logout</a></option>
+             </select>
            </ul>
- 
          </div>
  
        </div>
@@ -259,11 +203,9 @@
  
      <!-- Sidebar -->
      <div class="sidebar-fixed position-fixed">
- 
        <a class="logo-wrapper waves-effect">
-         <img src="#" class="img-fluid" alt="">
+         <img src="http://www.collegeinnovators.com/wp-content/uploads/2018/10/agriculture-icon-e1539991462686.png" width="80%" height="80%" style="max-height: 100%" class="img-fluid" alt="">
        </a>
- 
        <div class="list-group list-group-flush">
          {% block side-nav-list-items %}{% endblock side-nav-list-items%}
          <!--
@@ -288,22 +230,37 @@
      <div class="container-fluid mt-5">
  
        <!-- Heading -->
+       {% block user%}{% endblock user%}
        <div class="card mb-4 wow fadeIn">
  
          <!--Card content-->
          <div class="card-body d-sm-flex justify-content-between">
- 
            <h4 class="mb-2 mb-sm-0 pt-1">
              <a href="#" target="_blank">FarAgri</a>
              <span>/</span>
              <span>{% block breadcrumb%}{%endblock breadcrumb%}</span>
            </h4>
  
-           
+           <form class="d-flex justify-content-center">
+             <!-- Default input -->
+             <!-- <input type="search" placeholder="Search here" aria-label="Search" class="form-control">
+             <button class="btn btn-primary btn-sm my-0 p" type="submit">
+               <i class="fas fa-search"></i>
+             </button> -->
+ 
+           </form>
  
          </div>
- 
        </div>
+
+       {% if messages %}
+        {% for message in messages %}
+          <div class="alert alert-{{ message.tags }}">
+            {{message}}
+          </div>
+        {% endfor %}
+      {% endif %}
+
        <!-- Heading -->
        {% block content %}{% endblock content %}
      </div>
@@ -314,45 +271,22 @@
    <footer class="page-footer text-center font-small primary-color-dark darken-2 mt-4 wow fadeIn">
  
      <!--Call to action-->
-     <div class="pt-4">
-       <a class="btn btn-outline-white" href="#" target="_blank"
-         role="button">Download your reports
-         <i class="fas fa-download ml-2"></i>
-       </a>
-       <a class="btn btn-outline-white" href="#" target="_blank" role="button"> E-Learning Videos
-         <i class="fas fa-graduation-cap ml-2"></i>
-       </a>
-     </div>
      <!--/.Call to action-->
  
      <hr class="my-4">
  
      <!-- Social icons -->
      <div class="pb-4">
-       <a href="#" target="_blank">
-         <i class="fab fa-facebook-f mr-3"></i>
-       </a>
- 
-       <a href="#" target="_blank">
-         <i class="fab fa-twitter mr-3"></i>
-       </a>
- 
-       <a href="#" target="_blank">
-         <i class="fab fa-youtube mr-3"></i>
-       </a>
- 
- 
  
      </div>
      <!-- Social icons -->
  
      <!--Copyright-->
-     <div class="footer-copyright py-3">
+     <div class="footer-copyright PB-4 py-3">
        © 2019 Copyright:
        <a href="#" target="_blank"> Ministry of Agriculture; &nbsp; GOVERNMENT OF MAHARASHTRA </a>
      </div>
      <!--/.Copyright-->
- 
    </footer>
    <!--/.Footer-->
  
@@ -373,6 +307,7 @@
      new WOW().init();
  
    </script>
+ 
  
    <!-- Charts -->
    <script>
@@ -575,6 +510,9 @@
      });
  
    </script>
+ 
+ {% block for_script %}{% endblock for_script%}
+ 
  </body>
  
  </html>
