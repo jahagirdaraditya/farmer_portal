@@ -6,30 +6,30 @@ all_posts = [
         'id' : 'IKJHTCI',
         'rs':'4500/Quintal',
         'ava_qty' : '350Quintal',
-        'name':'Vivek Deshmukh',
+        'name':'FPO',
         'contact' : '9988776655',
-        'location':'Nanded',
+        'location':'Latur',
         'date_posted' : '12-Jan-2020 05:37 pm',
     },
     {
-        'product':'Soyabean Oil Seed',
+        'product':'Wheat',
         'id' : 'UHGYTCI',
         'rs':'4500/Quintal',
         'ava_qty' : '350Quintal',
-        'name':'Vivek Deshmukh',
+        'name':'FPO',
         'contact' : '9988776655',
-        'location':'Nanded',
+        'location':'Latur',
         'date_posted' : '12-Jan-2020 05:37 pm',
 
     },
     {
-        'product':'Soyabean Oil Seed',
+        'product':'Jowar',
         'id' : 'EDXYTCI',
         'rs':'4500/Quintal',
         'ava_qty' : '350Quintal',
-        'name':'Vivek Deshmukh',
+        'name':'FPO',
         'contact' : '9988776655',
-        'location':'Nanded',
+        'location':'Latur',
         'date_posted' : '12-Jan-2020 05:37 pm',
 
     },
@@ -38,7 +38,7 @@ all_posts = [
         'id' : 'JZXYTCI',
         'rs':'4500/Quintal',
         'ava_qty' : '350Quintal',
-        'name':'Vivek Deshmukh',
+        'name':'FPO',
         'contact' : '9988776655',
         'location':'Nanded',
         'date_posted' : '12-Jan-2020 05:37 pm',
@@ -49,9 +49,9 @@ all_posts = [
         'id' : 'BZXYTCI',
         'rs':'4500/Quintal',
         'ava_qty' : '350Quintal',
-        'name':'Vivek Deshmukh',
+        'name':'FPO',
         'contact' : '9988776655',
-        'location':'Nanded',
+        'location':'Beed',
         'date_posted' : '12-Jan-2020 05:37 pm',
 
     },
@@ -60,7 +60,7 @@ all_posts = [
         'id' : 'VAXYTCI',
         'rs':'4500/Quintal',
         'ava_qty' : '350Quintal',
-        'name':'Vivek Deshmukh',
+        'name':'FPO',
         'contact' : '9988776655',
         'location':'Nanded',
         'date_posted' : '12-Jan-2020 05:37 pm',
@@ -96,19 +96,19 @@ my_orders = [
 buy_now_details = [
     {
     'transaction_id':'OD123456789',
-    'product':'Groundnuts Oil Seed',
+    'product':'Wheat',
     'rs':'5500',
-    'name':'Shubham Deshmukh',
+    'name':'Nanded FPO',
     'date_posted' : 'Fri, Oct 18th 2019',
-    'status' : 'Cancelled',
-    'reason' : 'Shipment Cancelled',
+    'status' : 'Out for delivery',
+    'reason' : 'Packaging done',
     
     },
     {
     'transaction_id':'OD989877666',
     'product':'Soyabean Oil Seed',
     'rs':'6600',
-    'name':'Vishnu Bhosle',
+    'name':'Aurangabad FPO',
     'date_posted' : 'Fri, Oct 18th 2019',
     'status' : 'Delivered on Nov 02, 2019',
     'reason' : 'Your item has been delivered',
@@ -137,7 +137,7 @@ def buy_now(request):
 
 def checkout(request):
     if request.POST:
-        messages.success(request,f'Tumchya acc mdhun sgl balance gelel ahe Successfully!')   
+        messages.success(request,f'Thank you!')   
         return redirect('buyer-dashboard')
     return render(request, 'buyer/checkout.html')
 
@@ -151,4 +151,8 @@ def success_stories(request):
 
 def feedback(request):
     return render(request, 'buyer/feedback.html')
+
+
+def out_for_delivery(request):
+    return render(request, 'buyer/out_for_delivery.html')
 

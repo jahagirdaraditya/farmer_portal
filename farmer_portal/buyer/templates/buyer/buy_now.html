@@ -6,6 +6,7 @@
         <div class="col-md-12 mb-4">
           <!-- Cart -->
           <div class="card">
+            <div class="card-body">
               <div class="row">
                 <div class="column">
             <img class=" article-img-checkout" src="https://siloscordoba.com/wp-content/uploads/2018/09/Almacenar-granos-forma-segura.jpg">
@@ -25,57 +26,40 @@
                       <div class="row">
                           <div class="column">
                     <input type="text" id="pincode" class="form-control" placeholder="Delivery Pincode">
-                    <label for="pincode" class="">Pincode</label>
                 </div>
                 <span class="column">
                     <button class="btn btn-success btn-sm">Apply</button>
                 </span>
                   </div>
+                  
+                  <div class="row">
+                    <div class="col-lg-4 col-md-6 mb-4" >
+                      <label for="wght">Weight</label>
+                      <input type="text" class="form-control"  id="wght" required>
+                      <div class="invalid-feedback">
+                        weight required.
+                      </div>
+                  </div>
+                  <div class="col-lg-4 col-md-6 mb-4" >
+                      <select class="custom-select d-block w-100" id="wght" required>
+                        <option value="1">Kg</option>
+                        <option value="2">Quintal</option>
+                        <option value="3">Ton</option>
+                      </select>
+                  </div>
+                    </div>
+                    <!--Grid column-->
+      <b>Remark : </b><p>This is hybrid crop.</p>
+                  </div>
+                  <!--Grid row-->
+                  </div>
                 </div>
-            </form>
+            
             <!-- dropdown for courier -->
+              
               <!--Grid column-->
-              <div class="col-lg-8 col-md-6 mb-4">
-
-                <label for="courier_services">Courier Services</label>
-                <select class="custom-select d-block w-100" id="courirs" required>
-                  <option value="1">Choose...</option>
-                  <option value="2">CDN Couriers - ₹ 50</option>
-                  <option value="3">RFG Couriers - ₹ 60</option>
-                  <option value="4">THU Couriers - ₹ 78</option>
-                  <option value="5">ERR Couriers - ₹ 84</option>
-                  <option value="6">DK Couriers - ₹ 99</option>
-                </select>
-                <div class="invalid-feedback">
-                  Please provide a valid Courier.
-                </div>
-
-              </div>
-              <!--Grid column-->
-
-              <!--Grid column-->
-              <div class="row">
-              <div class="col-lg-4 col-md-6 mb-4">
-                <label for="wght">Weight</label>
-                <input type="text" class="form-control" id="wght" placeholder="" required>
-                <div class="invalid-feedback">
-                  weight required.
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 mb-4">
-                <label for="wght">Count</label>
-                <select class="custom-select d-block w-100" id="wght" required>
-                  <option value="1">Kg</option>
-                  <option value="2">Quintal</option>
-                  <option value="3">Ton</option>
-                </select>
-            </div>
-              </div>
-              <!--Grid column-->
-
-            </div>
-            <!--Grid row-->
-
+              
+          </form>
             <!-- dropdown for courier -->
               </div>
               <a href="{%url 'checkout_buyer' %}" class="btn btn-success" type="button" style="margin-left:80%">
@@ -92,5 +76,5 @@
     </div>
   <!--Main layout-->
     <hr class="my-4">
-    
+  </div>
     {% endblock %}

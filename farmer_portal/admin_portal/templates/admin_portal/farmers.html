@@ -6,7 +6,6 @@
       <!--Grid row-->
       <div class="row wow fadeIn d-flex justify-content-center">
 
-        
         <!--Grid column-->
         <div class="col-md-12 mb-4">
 
@@ -14,13 +13,13 @@
           <div class="card">
             <div class="card-header">
                 <div class="row">
-                    <div class="col-sm-6">
-                        <button class="btn btn-info">Add Farmer</button>
+                    <div class="col-sm-4">
+                      <button class="btn btn-primary btn-sm my-0 p" data-toggle="modal" data-target="#basicExampleModal">Add FPO</button>
                     </div>
-                    <div class="col-sm-6">
+                    <div class="col-sm-8">
                         <div class="row">
                             
-                    <div class="col-sm-10">
+                    <div class="col-sm-8">
                         <form class="d-flex justify-content-center">
                         <!-- Default input -->
                         <input type="search" placeholder="Search here" aria-label="Search" class="form-control">
@@ -30,18 +29,16 @@
             
                       </form>
                     </div>
-                    <div class="col-sm-2">
-                        <!-- Basic dropdown -->
-                        <button class=" dropdown-toggle mr-4" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false" style="background:transparent;border-style:none">
-                        <i class="fas fa-filter"></i></button>
-            <div class="dropdown-menu">
-                <h6 class="dropdown-header">According to</h6>
-                <a class="dropdown-item" href="#">Name</a>
-                <a class="dropdown-item" href="#">Location</a>
-                <a class="dropdown-item" href="#">Date</a>
-                
-            <!-- Basic dropdown -->
+                    <div class="col-sm-4">
+                   
+<!-- Basic dropdown -->
+<select class="browser-default custom-select">
+  <option selected>Sort according to</option>
+  <option value="1">date</option>
+  <option value="2">location</option>
+  <option value="3">name</option>
+</select>
+  
                     </div>
                 </div>
             </div>
@@ -95,7 +92,6 @@
 <br>
       
 <div class="col-lg-12 col-md-6 mb-4 ">
-
     <!--Card-->
     <div class="card  justify-content-center">
   
@@ -113,6 +109,81 @@
     <!--/.Card-->
   
   </div>
+  
+
+<!-- Modal -->
+<div class="modal fade" id="basicExampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+aria-hidden="true">
+
+<!-- Add .modal-dialog-centered to .modal-dialog to vertically center the modal -->
+<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+
+
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <div class="modal-body" style="padding:20px">
+        <form method="POST">
+          {% csrf_token %}
+          <select class="browser-default custom-select">
+            <option selected>Role</option>
+            <option value="1">Farmer</option>
+            <option value="2">Buyer</option>
+            <option value="3">Service Provider</option>
+          </select>
+          <div class="md-form">
+            <input type="text" id="name" class="form-control">
+            <label for="name">Full Name</label>
+          </div>
+          <div class="md-form">
+            <input type="text" id="address" class="form-control">
+            <label for="address">Address</label>
+          </div>
+          <select class="browser-default custom-select">
+            <option selected>Select District</option>
+            <option value="1">Nanded</option>
+            <option value="2">Aurangabad</option>
+            <option value="3">Pune</option>
+            <option value="3">Beed</option>
+          </select>
+          <div class="md-form">
+            <input type="text" id="mob" class="form-control">
+            <label for="mob">Mobile Number</label>
+          </div>
+          <div class="md-form">
+            <input type="text" id="pin" class="form-control">
+            <label for="pin">PinCode</label>
+          </div>
+          <div class="md-form">
+            <input type="text" id="Username" class="form-control">
+            <label for="Username">Username</label>
+          </div>
+          <div class="md-form">
+            <input type="password" id="password" class="form-control">
+            <label for="password">Enter Password</label>
+          </div>
+          <div class="md-form">
+          <input type="password" id="cpassword" class="form-control">
+          <label for="cpassword">Confirm Password</label>
+        </div>
+          <button class="btn btn-primary" type="submit" aria-haspopup="true" aria-expanded="false">Add</button>
+        </form>
+      </div>
+    </div>
+    <!-- <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      <button type="button" class="btn btn-primary">Save changes</button>
+    </div> -->
+  </div>
+</div>
+</div>
+                 
+
   <script>
       
 var ctxB = document.getElementById("barChart").getContext('2d');

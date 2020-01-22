@@ -119,3 +119,4 @@ def services(request):
 
 def revenue(request):
     return render(request, 'admin_portal/revenue.html')
+

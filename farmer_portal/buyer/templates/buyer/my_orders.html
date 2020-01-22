@@ -11,10 +11,10 @@
       <div class="card-header" style="background-color: #f1eded;">
         <div class="row">
             <div class="col-sm-6">
-                <a href="#" type="button" class="btn btn-info">{{ post.transaction_id }}</a>
+                <a href="{% url 'buyer-track' %}" type="button" class="btn btn-info">{{ post.transaction_id }}</a>
             </div>
             <div class="col-sm-6">
-                <a href="#" type="button" class="btn" style="background-color:#e6e6e6; margin-left:60%">
+                <a href="{% url 'buyer-track' %}" type="button" class="btn" style="background-color:#e6e6e6; margin-left:60%">
                     <i class="fas fa-map-marker-alt" style="color:#2874f0"></i>
                     Track</a>
             </div>

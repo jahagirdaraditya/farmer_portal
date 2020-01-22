@@ -1,32 +1,6 @@
-{% extends "buyer/dashboard_base.html" %}
-{%block breadcrumb%}Dashboard{% endblock breadcrumb%}
-{%block content%}
-
-<!-- location and filter dropdown -->
-<div class="row">
-<div class="col-md-4 mb-4">
-  <label><i class="fas fa-map-marker-alt"></i>Location</label>
-  <select class="custom-select d-block w-100" id="wght" required>
-    <!-- <option value="1" selected="true">Choose From Below...</option> -->
-    <option class="fas fa-map-marker-alt">Location</option>
-    <option value="1">Nanded</option>
-    <option value="2">Beed</option>
-    <option value="3">Latur</option>
-  </select>
-</div>
-
-<div class="col-lg-4 col-md-4 mb-4">
-  <label><i class="fas fa-filter"></i>Filter</label>
-  <select class="custom-select d-block w-100" id="wght" required>
-    <option value="1">Sort by Name</option>
-    <option value="2">Sort by FPO's</option>
-    <option value="3">Prices: Low to High</option>
-  </select>
-</div>
-
-</div>
-
-{% for post in all_posts %}
+{% extends "portal/base.html" %}
+{% block content %}
+    {% for post in posts %}
         <article class="media content-section">
           <img class="rounded-circle article-img" src="https://siloscordoba.com/wp-content/uploads/2018/09/Almacenar-granos-forma-segura.jpg">
           <div class="media-body">
@@ -49,4 +23,4 @@
         </article>
     {% endfor %}
 
-{%endblock content%}
+{% endblock content %}

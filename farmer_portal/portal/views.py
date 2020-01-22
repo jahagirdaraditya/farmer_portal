@@ -18,6 +18,75 @@ posts = [
     }
 ]
 
+all_posts = [
+    {
+        'product':'Soyabean Oil Seed',
+        'id' : 'IKJHTCI',
+        'rs':'4500/Quintal',
+        'ava_qty' : '350Quintal',
+        'name':'FPO',
+        'contact' : '9988776655',
+        'location':'Latur',
+        'date_posted' : '12-Jan-2020 05:37 pm',
+    },
+    {
+        'product':'Wheat',
+        'id' : 'UHGYTCI',
+        'rs':'4500/Quintal',
+        'ava_qty' : '350Quintal',
+        'name':'FPO',
+        'contact' : '9988776655',
+        'location':'Latur',
+        'date_posted' : '12-Jan-2020 05:37 pm',
+
+    },
+    {
+        'product':'Jowar',
+        'id' : 'EDXYTCI',
+        'rs':'4500/Quintal',
+        'ava_qty' : '350Quintal',
+        'name':'FPO',
+        'contact' : '9988776655',
+        'location':'Latur',
+        'date_posted' : '12-Jan-2020 05:37 pm',
+
+    },
+    {
+        'product':'Soyabean Oil Seed',
+        'id' : 'JZXYTCI',
+        'rs':'4500/Quintal',
+        'ava_qty' : '350Quintal',
+        'name':'FPO',
+        'contact' : '9988776655',
+        'location':'Nanded',
+        'date_posted' : '12-Jan-2020 05:37 pm',
+
+    },
+    {
+        'product':'Soyabean Oil Seed',
+        'id' : 'BZXYTCI',
+        'rs':'4500/Quintal',
+        'ava_qty' : '350Quintal',
+        'name':'FPO',
+        'contact' : '9988776655',
+        'location':'Beed',
+        'date_posted' : '12-Jan-2020 05:37 pm',
+
+    },
+    {
+        'product':'Soyabean Oil Seed',
+        'id' : 'VAXYTCI',
+        'rs':'4500/Quintal',
+        'ava_qty' : '350Quintal',
+        'name':'FPO',
+        'contact' : '9988776655',
+        'location':'Nanded',
+        'date_posted' : '12-Jan-2020 05:37 pm',
+
+    },
+]
+
+
 def home(request):
     context = {
         'posts' : posts
@@ -45,3 +114,13 @@ def login(request):
         else:
             messages.warning(request, f'Please select a role.')
     return render(request, 'portal/home.html')
+
+def view_post(request):
+    context = {
+        'posts' : all_posts
+    }
+    # if request.POST:
+    #     # data = request.POST
+    #     # print(data)
+    #     messages.success(request, f'Account Registered successfully')
+    return render(request, 'portal/view_post.html', context)

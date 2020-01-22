@@ -64,6 +64,7 @@
                     </div>
                   </div>
                 </div>
+                
                 <div class="row" style="text-align: center">
                   <div class="col-4">
                     <a data-toggle="modal" data-target="#exampleModal" href="#exampleModal"><span class="header-right-text">Registration</span></a>
@@ -140,9 +141,10 @@
           <button type="button" class="btn btn-success btn-block"><i class="fas fa-mobile"></i> Mobile App</button>
           <button type="button" class="btn btn-success btn-block"><i class="fas fa-rupee-sign"></i> Price Details</button>
         <a href="{% url 'farmer-success_stories' %}"><button type="button" class="btn btn-success btn-block"><i class="fas fa-user-friends"></i> Success Stories</button></a>
-          <button type="button" class="btn btn-success btn-block"><i class="fas fa-file-alt"></i> View Posts</button>
+        <a href="{% url 'view_post' %}"><button type="button" class="btn btn-success btn-block"><i class="fas fa-file-alt"></i> View Posts</button>
           <button type="button" class="btn btn-success btn-block"><i class="fas fa-sign-in-alt"></i> Registration</button>
         </div>
+        
         <div class="col-md-6 main-carousel">
                     <!--Carousel Wrapper-->
           <div id="carousel-example-1z" class="carousel slide carousel-fade" data-ride="carousel">
@@ -226,6 +228,7 @@
       </div>
     </div>
   </div>
+
   <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
@@ -330,6 +333,7 @@
             </div>
           {% endfor %}
         {% endif %}
+        <br>
         {% block content %}{% endblock %}
       </div>
     </div>

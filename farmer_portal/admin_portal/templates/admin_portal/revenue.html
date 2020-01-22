@@ -1,101 +1,201 @@
 {% extends "admin_portal/without_search_layout.html" %}
-{%block breadcrumb%}Dashboard{% endblock breadcrumb%}
+{%block breadcrumb%}Revenue{% endblock breadcrumb%}
 {%block content%}
-<div class="container card">
-    <div class="row">
-    <div class="col-md-8">
-<h2>Revenue generated : </h2>
-<div>
-    <canvas id="pieChart" style="max-width: 70%;"></canvas>
+<div class="container">
+  <h3>District wise Produce</h3>
+ <div class="row">
+
+      <div class="card mb-4 col-md-6">
+
+        <!-- Card header -->
+        <div class="card-header text-center">
+          Aurangabad
+        </div>
+
+        <!--Card content-->
+        <div class="card-body">
+
+          <canvas id="pieChart1" style="max-width: 500px;"></canvas>
+
+
+        </div>
+
+      </div>
+      <!--/.Card-->
+
+      <div class="card mb-4 col-md-6">
+
+        <!-- Card header -->
+        <div class="card-header text-center">
+          Nanded
+        </div>
+
+        <!--Card content-->
+        <div class="card-body">
+
+          <canvas id="pieChart" style="max-width: 500px;"></canvas>
+
+
+        </div>
+
+      </div>
   </div>
-</div>
-
-<div class="col-md-4">
-    <!-- demo -->
-
-    <!-- dropdown -->
-    <!-- Basic dropdown -->
-    <button class=" dropdown-toggle mr-4" data-toggle="dropdown"
-    aria-haspopup="true" aria-expanded="false" style="background:transparent;border-style:none">
-   Revenue</button>
-<div class="dropdown-menu">
-<h6 class="dropdown-header">According to</h6>
-<button type="button" class="dropdown-item btn" data-toggle="modal" data-target="#basicExampleModal">
-    Month
-  </button>
-  <button type="button" class="dropdown-item btn" data-toggle="modal" data-target="#basicExampleModal1">
-    Year
-  </button>
-
-<!-- Basic dropdown -->
-    <!-- /dropdown -->
-      <!-- Modal -->
-      <div class="modal fade" id="basicExampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
+  <h3>High Produce Area </h3>
+  <div class="row">
+ 
+          <div class="card mb-4 col-md-6">
+    
+            <!-- Card header -->
+            <div class="card-header text-center">
+              Wheat
             </div>
-            <div class="modal-body">
-              ...jsnoioxxxk
+    
+            <!--Card content-->
+            <div class="card-body">
+    
+              <canvas id="barChart1" style="max-width: 500px;"></canvas>
+    
+    
             </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
+    
           </div>
-        </div>
-      </div>
-      <!-- /modal1 -->
-
-      <!-- modal2 -->
-      <!-- Modal -->
-      <div class="modal fade" id="basicExampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
+          <!--/.Card-->
+    
+          <div class="card mb-4 col-md-6">
+    
+            <!-- Card header -->
+            <div class="card-header text-center">
+              Jowar
             </div>
-            <div class="modal-body">
-              ...ftgyhjkl
+    
+            <!--Card content-->
+            <div class="card-body">
+    
+              <canvas id="barChart" style="max-width: 500px;"></canvas>
+    
+    
             </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
+    
           </div>
-        </div>
       </div>
-      <!-- /modal2 -->
-    <!-- /demo -->
+    
+      
 </div>
-</div>
-</div>
+
 
   <script>
-      //pie
     var ctxP = document.getElementById("pieChart").getContext('2d');
     var myPieChart = new Chart(ctxP, {
       type: 'pie',
       data: {
-        labels: ["Buyers", "Farmers", "Services"],
+        labels: ["Wheat", "Jowar", "Moong", "Bajra", "Rice"],
         datasets: [{
-          data: [200, 150, 100],
-          backgroundColor: ["#F7464A", "#46BFBD", "#FDB45C"],
-          hoverBackgroundColor: ["#FF5A5E", "#5AD3D1", "#FFC870"]
+          data: [100, 70, 120, 90, 100],
+          backgroundColor: ["#F7464A", "#46BFBD", "#FDB45C", "#949FB1", "#4D5360"],
+          hoverBackgroundColor: ["#FF5A5E", "#5AD3D1", "#FFC870", "#A8B3C5", "#616774"]
         }]
       },
       options: {
-        responsive: true
+        responsive: true,
+        legend: false
       }
     });
+
+
+    var ctxP = document.getElementById("pieChart1").getContext('2d');
+    var myPieChart = new Chart(ctxP, {
+      type: 'pie',
+      data: {
+        labels: ["Wheat", "Jowar", "Moong", "Bajra", "Rice"],
+        datasets: [{
+          data: [100, 50, 120, 80, 120],
+          backgroundColor: ["#F7464A", "#46BFBD", "#FDB45C", "#949FB1", "#4D5360"],
+          hoverBackgroundColor: ["#FF5A5E", "#5AD3D1", "#FFC870", "#A8B3C5", "#616774"]
+        }]
+      },
+      options: {
+        responsive: true,
+        legend: false
+      }
+    });
+
+         
+var ctxB = document.getElementById("barChart").getContext('2d');
+var myBarChart = new Chart(ctxB, {
+type: 'bar',
+data: {
+labels: ["Nanded", "Aurangabad", "Beed", "Latur", "Parbhani", "Hingoli"],
+datasets: [{
+label: 'Quintals',
+data: [1200, 690, 3000, 3500, 1200, 1930],
+backgroundColor: [
+'rgba(255, 99, 132, 0.2)',
+'rgba(255, 99, 132, 0.2)',
+'rgba(255, 99, 132, 0.2)',
+'rgba(255, 99, 132, 0.2)',
+'rgba(255, 99, 132, 0.2)',
+'rgba(255, 99, 132, 0.2)'
+],
+borderColor: [
+'rgba(255,99,132,1)',
+'rgba(255,99,132,1)',
+'rgba(255,99,132,1)',
+'rgba(255,99,132,1)',
+'rgba(255,99,132,1)',
+'rgba(255,99,132,1)'
+],
+borderWidth: 1
+}]
+},
+options: {
+scales: {
+yAxes: [{
+ticks: {
+beginAtZero: true
+}
+}]
+}
+}
+});
+
+     
+var ctxB = document.getElementById("barChart1").getContext('2d');
+var myBarChart = new Chart(ctxB, {
+type: 'bar',
+data: {
+labels: ["Nanded", "Aurangabad", "Beed", "Latur", "Parbhani", "Hingoli"],
+datasets: [{
+label: 'Quintals',
+data: [1200, 790, 300, 5000, 200, 930],
+backgroundColor: [
+'rgba(255, 99, 132, 0.2)',
+'rgba(255, 99, 132, 0.2)',
+'rgba(255, 99, 132, 0.2)',
+'rgba(255, 99, 132, 0.2)',
+'rgba(255, 99, 132, 0.2)',
+'rgba(255, 99, 132, 0.2)'
+],
+borderColor: [
+'rgba(255,99,132,1)',
+'rgba(255,99,132,1)',
+'rgba(255,99,132,1)',
+'rgba(255,99,132,1)',
+'rgba(255,99,132,1)',
+'rgba(255,99,132,1)'
+],
+borderWidth: 1
+}]
+},
+options: {
+scales: {
+yAxes: [{
+ticks: {
+beginAtZero: true
+}
+}]
+}
+}
+});
+
   </script>
 {% endblock %}

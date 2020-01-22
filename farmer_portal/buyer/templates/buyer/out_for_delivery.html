@@ -1,0 +1,78 @@
+{% extends "buyer/dashboard_base_checkout.html" %}
+{%block breadcrumb%}Track{% endblock breadcrumb%}
+
+{%block content%}
+<div class="container">
+<div class="card">
+    <div class="card-body">
+        <div class="row">
+            <div class="col-md-4">
+                <h4>Delivery Address : </h4>
+                <b>Vivek Deshmukh</b>
+                <p>C-14, shri gajanan krupa, <br>
+                    A. K. Sambhaji Mangal karyalay road,<br> 
+                    Pushp Nagar Nanded,<br>
+                    Sai tent house<br>
+                    Nanded Waghala - 431602, Maharashtra</p>
+                   <b>Phone number</b> 
+                    9881597951, 8329332744
+            </div>
+            <div class="col-md-8">
+                <div class="row">
+                    <div class="col-md-4">
+                        <img src="https://siloscordoba.com/wp-content/uploads/2018/09/Almacenar-granos-forma-segura.jpg" width="200px" height="200px">
+                    </div>
+                    <div class="col-md-2"></div>
+                    <div class="col-md-6">
+                        <h4>Wheat</h4>
+                        <small class="text-muted">CC Nanded</small>
+                        <h4>5kg</h4>
+                        <h3>₹ 5500</h3>
+                    </div>
+                </div>
+
+                <!-- stepper -->
+                <!-- Horizontal Steppers -->
+<div class="row">
+    <div class="col-md-12">
+  
+      <!-- Stepers Wrapper -->
+      <ul class="stepper stepper-horizontal">
+  
+        <!-- First Step -->
+        <li class="completed">
+          <a href="#!">
+            <span class="circle">1</span>
+            <span class="label">Packed</span>
+          </a>
+        </li>
+  
+        <!-- Second Step -->
+        <li class="active">
+          <a href="#!">
+            <span class="circle">2</span>
+            <span class="label">Out for Delivery</span>
+          </a>
+        </li>
+  
+        <!-- Third Step -->
+        <li class="warning">
+          <a href="#!">
+            <span class="circle"><i class="fas fa-exclamation"></i></span>
+            <span class="label">Delivered</span>
+          </a>
+        </li>
+  
+      </ul>
+      <!-- /.Stepers Wrapper -->
+  
+    </div>
+  </div>
+  <!-- /.Horizontal Steppers -->
+                <!-- /stepper -->
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+{% endblock %}

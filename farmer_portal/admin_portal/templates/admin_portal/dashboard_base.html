@@ -8,13 +8,13 @@
   </a>
 </li>
 <li class="nav-item">
-  <a class="nav-link waves-effect" href="#" target="_blank">Buyer's</a>
+  <a class="nav-link waves-effect" href="{% url 'admin-buyers' %}" target="_blank">Buyer's</a>
 </li>
 <li class="nav-item">
-  <a class="nav-link waves-effect" href="#" target="_blank">Farmer's</a>
+  <a class="nav-link waves-effect" href="{% url 'admin-farmers' %}" target="_blank">Farmer's</a>
 </li>
 <li class="nav-item">
-  <a class="nav-link waves-effect" href="#" target="_blank">Service's</a>
+  <a class="nav-link waves-effect" href="{% url 'admin-services' %}" target="_blank">Service's</a>
 </li>
 {% endblock top-nav-list-items%}
 {% block side-nav-list-items %}
@@ -23,9 +23,6 @@
 </a>
 <a href="#" class="list-group-item list-group-item-action waves-effect">
   <i class="fas fa-user mr-3"></i>Farmer's
-</a>
-<a href="#" class="list-group-item list-group-item-action waves-effect">
-  <i class="fas fa-sack"></i>Refer and Earn Schemes
 </a>
 <a href="#" class="list-group-item list-group-item-action waves-effect">
   <i class="fas fa-users mr-3"></i>Success Stories
