@@ -1,5 +1,5 @@
 {% extends "portal/dashboard_layout.html" %}
-{% block title%} Dashboard {% endblock title%}
+{% block title%}Farmer Dashboard {% endblock title%}
 {% block nav-title %} Farmer-Portal {%endblock nav-title%}
 {% block top-nav-list-items %}
 <li class="nav-item active">
@@ -21,22 +21,28 @@
 
 
 
- <a href="{%url 'farmer-dashboard' %}" class="list-group-item active waves-effect">
+<a href="{%url 'farmer-dashboard' %}" class="list-group-item active waves-effect">
   <i class="fas fa-chart-pie mr-3"></i>Dashboard
 </a>
 <a href="#" class="list-group-item list-group-item-action waves-effect">
   <i class="fas fa-user mr-3"></i>Profile
 </a>
-<a href="{%url 'farmer-addProduce-Form' %}" class="list-group-item list-group-item-action waves-effect">
+<!-- <a href="{%url 'farmer-addProduce-Form' %}" class="list-group-item list-group-item-action waves-effect">
   <i class="fas fa-folder mr-3"></i>Add Produce
-</a>
-<a href="{%url 'farmer-applications' %}" class="list-group-item list-group-item-action waves-effect">
+</a> -->
+<!-- <a href="{%url 'farmer-applications' %}" class="list-group-item list-group-item-action waves-effect">
   <i class="fas fa-users mr-3"></i>Applications
+</a> -->
+<a href="{% url 'fpo-list' %}" class="list-group-item list-group-item-action waves-effect">
+  <i class="fas fa-box-open mr-3"></i>FPO list
 </a>
-<a href="#" class="list-group-item list-group-item-action waves-effect">
+<a href="{% url 'farmer-history' %}" class="list-group-item list-group-item-action waves-effect">
+  <i class="fas fa-box-open mr-3"></i>Prievew
+</a>
+<!-- <a href="{% url 'farmer-orders' %}" class="list-group-item list-group-item-action waves-effect">
   <i class="fas fa-box-open mr-3"></i>Orders
-</a>
-<a href="#" class="list-group-item list-group-item-action waves-effect">
+</a> -->
+<a href="{% url 'farmer-complaints' %}" class="list-group-item list-group-item-action waves-effect">
   <i class="fas fa-exclamation-circle mr-3"></i>Complaints
 </a>
 <a href="{% url 'farmer-services' %}" class="list-group-item list-group-item-action waves-effect">

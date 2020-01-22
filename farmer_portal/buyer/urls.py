@@ -12,4 +12,5 @@ urlpatterns = [
     path('feedback/', buyer_views.feedback , name='buyer-feedback'),
     path('track/', buyer_views.out_for_delivery , name='buyer-track'),
     path('success_stories/', buyer_views.success_stories, name='buyer-success_stories'),
+    path('order-confirm/', buyer_views.order_confirm, name='buyer-order-confirm'),
 ]

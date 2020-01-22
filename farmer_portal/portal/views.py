@@ -107,14 +107,18 @@ def login(request):
             return redirect('farmer-dashboard')
         elif role == '2':
             print(role)
-            return redirect('buyer-dashboard')
+            return redirect('fpo-dashboard')
         elif role == '3':
+            print(role)
+            return redirect('buyer-dashboard')
+        elif role == '4':
             print(role)
             return redirect('service-dashboard')
         else:
             messages.warning(request, f'Please select a role.')
     return render(request, 'portal/home.html')
 
+<<<<<<< HEAD
 def view_post(request):
     context = {
         'posts' : all_posts
@@ -124,3 +128,7 @@ def view_post(request):
     #     # print(data)
     #     messages.success(request, f'Account Registered successfully')
     return render(request, 'portal/view_post.html', context)
+=======
+def translate(request):
+    return render(request, 'portal/translate.html')
+>>>>>>> 6999fcd0c62a4b0eb5f9721540d981c2c1b1bf27

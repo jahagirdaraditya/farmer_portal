@@ -178,15 +178,19 @@ a.article-title:hover {
             {% block top-nav-list-items %}{% endblock top-nav-list-items%}
             
           </ul>
-
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link waves-effect" href="{% url 'portal-home' %}">Logout</a>
+            </li>
+          </ul>
           <!-- Right -->
-          <ul class="navbar-nav nav-flex-icons">
+          <!-- <ul class="navbar-nav nav-flex-icons">
             <select class="browser-default custom-select">
               <option selected>Actions</option>
               <option value="1">My Profile</option>
               <option value="2">Logout</option>
             </select>
-          </ul>
+          </ul> -->
         </div>
 
       </div>
@@ -244,6 +248,15 @@ a.article-title:hover {
 
         </div>
       </div>
+
+      {% if messages %}
+        {% for message in messages %}
+          <div class="alert alert-{{ message.tags }}">
+            {{message}}
+          </div>
+        {% endfor %}
+      {% endif %}
+
       <!-- Heading -->
       {% block content %}{% endblock content %}
     </div>

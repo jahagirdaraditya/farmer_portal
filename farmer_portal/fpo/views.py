@@ -8,65 +8,50 @@ def orders(request):
         'details': farmer_details,
         'transactions':transactions,
     }
-    return render(request, 'farmers/orders.html', context)
-
-def fpo_list(request):
-    context={
-        'details': farmer_details,
-        'transactions':transactions,
-    }
-    return render(request, 'farmers/fpo_list.html', context)
-
-def history(request):
-    context={
-        'details': farmer_details,
-        'transactions':transactions,
-    }
-    return render(request, 'farmers/history.html', context)
-
+    return render(request, 'fpo/orders.html', context)
 
 def dashboard(request):
     context={
         'details': farmer_details,
         'transactions':transactions,
     }
-    return render(request, 'farmers/dashboard.html', context)
+    return render(request, 'fpo/dashboard.html', context)
 
 def addProduce(request):
     if request.method == 'POST':
         print(request.POST)
         messages.success(request, f'Post successfully created! Our Team will verify the post and update you shortly.')
-        return redirect('farmer-dashboard')
+        return redirect('fpo-dashboard')
     context={
         'details': farmer_details,
         'csrf-token': django.middleware.csrf.get_token(request),
     }
-    return render(request, 'farmers/add_produce.html', context)
+    return render(request, 'fpo/add_produce.html', context)
 
-def farmerApplications(request):
-    return render(request, 'farmers/farmer-applications.html')
+def fpoApplications(request):
+    return render(request, 'fpo/fpo-applications.html')
 
 
 def services(request):
-    return render(request, 'farmers/services.html')
+    return render(request, 'fpo/services.html')
 
 
 def complaint(request):
     context={
         'complaints':complaints,
     }
-    return render(request, 'farmers/complaints.html', context)
+    return render(request, 'fpo/complaints.html', context)
 
 
 def check(request):
     context={
         'details': farmer_details,
     }
-    return render(request, 'farmers/dashboard00.html', context)
+    return render(request, 'fpo/dashboard00.html', context)
 
 
 def success_stories(request):
-    return render(request, 'farmers/success_stories.html')
+    return render(request, 'fpo/success_stories.html')
 
 
 transactions = [

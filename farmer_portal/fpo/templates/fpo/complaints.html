@@ -1,0 +1,71 @@
+{% extends "fpo/dashboard_base.html" %}
+{%block breadcrumb%}Complaint{% endblock breadcrumb%}
+{%block content%}
+
+<div class="card-body">
+<br>
+<h4>Previous Complaints</h4>
+    <!-- Table  -->
+    <table class="table table-hover">
+      <!-- Table head -->
+      <thead class="blue lighten-4">
+        <tr>
+          <th>Complaint Id</th>
+          <th>On role</th>
+          <th>Posted on</th>
+          
+        </tr>
+      </thead>
+      <!-- Table head -->
+
+      <!-- Table body -->
+      <tbody>
+          {% for post in complaints %}
+        <tr>
+          <th scope="row">{{ post.id }}</th>
+          <td>{{ post.role }}</td>
+          <td>{{ post.date_of_Complaint }}</td>
+          
+        </tr>
+        {% endfor %}
+      </tbody>
+      <!-- Table body -->
+    </table>
+    <!-- Table  -->
+
+  </div>
+
+
+  <!-- Form -->
+
+    <!-- /form -->
+
+     <!--Card-->
+     <div class="card">
+        <!--Card content-->
+        <h4>New Complaint</h4>
+        <form class="card-body">
+        <!--address-->
+          <div class="md-form mb-5">
+            <input type="text" class="form-control" placeholder="On role">
+            
+
+            <!-- <label for="courier_services" >On role</label>
+                <select class="custom-select d-block w-100" id="courirs" required>
+                  <option value="1">Farmer</option>
+                  <option value="2">Courier Services</option>
+                  <option value="3">Faragri</option>
+                </select> -->
+
+                <textarea type="text" id="message" name="message" rows="2" placeholder="Your complaint" class="form-control md-textarea"></textarea>
+                 
+                        
+          </div>
+          <!--Grid row-->
+   
+          <button class="btn btn-primary btn-sm" style="margin-left:45%" type="submit">Submit</button>
+        </form>
+      </div>
+      <!--/.Card-->
+      
+{% endblock %}

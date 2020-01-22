@@ -57,9 +57,11 @@
                         Languages
                       </button>
                       <div class="dropdown-menu">
-                        <a class="dropdown-item active" href="#">English</a>
-                        <a class="dropdown-item" href="#">Hindi</a>
-                        <a class="dropdown-item" href="#">Marathi</a>
+                        <!-- <a href="#googtrans(en|hi)" class="lang-es lang-select" data-lang="hi"><img src="https://www.solodev.com/assets/google-translate/flag-japan.png" alt="JAPAN"></a> -->
+
+                        <a class="dropdown-item active lang-es lang-select" href="#googtrans(en|en)" data-lang="en">English</a>
+                        <a class="dropdown-item lang-es lang-select" href="#googtrans(en|hi)" data-lang="hi">Hindi</a>
+                        <a class="dropdown-item lang-es lang-select" href="#googtrans(en|mr)" data-lang="mr">Marathi</a>
                       </div>
                     </div>
                   </div>
@@ -100,6 +102,7 @@
                 <a class="nav-link dropdown-toggle waves-effect waves-light" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Stakeholders</a>
                 <div class="dropdown-menu dropdown-info" aria-labelledby="navbarDropdownMenuLink">
                     <a class="dropdown-item waves-effect waves-light" href="#">Farmers</a>
+                    <a class="dropdown-item waves-effect waves-light" href="#">Fpo</a>
                     <a class="dropdown-item waves-effect waves-light" href="#">Buyers</a>
                     <a class="dropdown-item waves-effect waves-light" href="#">Service Provider</a>
                 </div>
@@ -202,7 +205,6 @@
                   <marquee direction = "up" scrolldelay="200">
                     National Consultative Workshop on “Selling Agriculture goods in National Agriculture Market” Date : 27st January, 2020 Venue: A.P. Shinde Symposium Hall, Latur, Nanded.<br>
                     Workshop at Aurangabad on "Awareness on Wheat Produce and Processing" by Dr. Pathak.
-
                 </marquee></p>
                   <!-- <a class="btn btn-pink"><i class="fas fa-clone left"></i> View project</a> -->
                 </div>
@@ -244,8 +246,9 @@
             <select class="browser-default custom-select">
               <option selected>Role</option>
               <option value="1">Farmer</option>
-              <option value="2">Buyer</option>
-              <option value="3">Service Provider</option>
+              <option value="2">Fpo</option>
+              <option value="3">Buyer</option>
+              <option value="4">Service Provider</option>
             </select>
             <div class="md-form">
               <input type="text" id="name" class="form-control">
@@ -260,7 +263,7 @@
               <option value="1">Nanded</option>
               <option value="2">Aurangabad</option>
               <option value="3">Pune</option>
-              <option value="3">Beed</option>
+              <option value="4">Beed</option>
             </select>
             <div class="md-form">
               <input type="text" id="mob" class="form-control">
@@ -303,8 +306,9 @@
             <select class="browser-default custom-select" name="role">
               <option selected>Role</option>
               <option value="1">Farmer</option>
-              <option value="2">Buyer</option>
-              <option value="3">Service Provider</option>
+              <option value="2">Fpo</option>
+              <option value="3">Buyer</option>
+              <option value="4">Service Provider</option>
             </select>
             <div class="md-form">
               <input type="text" id="Username" name="Username" class="form-control">
@@ -356,6 +360,36 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <!-- MDB core JavaScript -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.10.1/js/mdb.min.js"></script>
+
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+          new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.FloatPosition.TOP_LEFT}, 'google_translate_element');
+        }
+
+    	function triggerHtmlEvent(element, eventName) {
+    	  var event;
+    	  if (document.createEvent) {
+    		event = document.createEvent('HTMLEvents');
+    		event.initEvent(eventName, true, true);
+    		element.dispatchEvent(event);
+    	  } else {
+    		event = document.createEventObject();
+    		event.eventType = eventName;
+    		element.fireEvent('on' + event.eventType, event);
+    	  }
+    	}
+
+    	jQuery('.lang-select').click(function() {
+    	  var theLang = jQuery(this).attr('data-lang');
+    	  jQuery('.goog-te-combo').val(theLang);
+
+    	  //alert(jQuery(this).attr('href'));
+    	  window.location = jQuery(this).attr('href');
+    	  location.reload();
+
+    	});
+    </script>
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 
 

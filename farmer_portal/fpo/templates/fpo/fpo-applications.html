@@ -1,0 +1,165 @@
+{% extends "fpo/dashboard_base.html" %}
+{% load crispy_forms_tags %}
+{%block breadcrumb%}All Applications{% endblock breadcrumb%}
+{%block content%}
+<div class="container my-1 py-1">
+  <section>
+    <div class="row wow fadeIn">
+      <div class="col-md-12 mb-12">
+        <h5><b>Your Applications</b></h5>
+        <div class="card">
+          <div class="card-body">
+            <span class="float-md-right badge badge-success" style="color: green"><i class="fas fa-dot-circle"></i> LIVE</span>
+            <div class="row">
+              <div class="col-md-3">
+                <span class="badge badge-light">24 Jan 2020</span><br><br>
+                <div class="view overlay rounded z-depth-1">
+                  <img class="img-fluid" src="https://www.almanac.com/sites/default/files/image_nodes/tomatoes_helios4eos_gettyimages-edit.jpeg" alt="Sample image">
+                </div>
+              </div>
+              <div class="col-md-9">
+                <table class="table table-sm table-hover">
+                  <tbody>
+                    <tr>
+                      <th scope="row">Product name</th>
+                      <td>Pusa Sadabahar Tomatoes</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Quality</th>
+                      <td>Hybrid</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Price</th>
+                      <td>20 (<b>Units: </b> 1 kg )</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Farmer Name: </th>
+                      <td>Vivek Deshmukh (Aurangabad)</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <a href="#">View More</a>
+              </div>
+            </div>
+            <a href="#"><span class="float-md-right badge badge-danger" style="color: red"><i class="fas fa-times"></i> Remove</span></a>
+          </div>
+        </div><br>
+        <div class="card">
+          <div class="card-body">
+            <span class="float-md-right badge badge-info"><i class="fas fa-clock"></i> AWAITING</span>
+            <div class="row">
+              <div class="col-md-3">
+                <span class="badge badge-light">24 Jan 2020</span><br><br>
+                <div class="view overlay rounded z-depth-1">
+                  <img class="img-fluid" src="https://www.almanac.com/sites/default/files/image_nodes/tomatoes_helios4eos_gettyimages-edit.jpeg" alt="Sample image">
+                </div>
+              </div>
+              <div class="col-md-9">
+                <table class="table table-sm table-hover">
+                  <tbody>
+                    <tr>
+                      <th scope="row">Product name</th>
+                      <td>Pusa Sadabahar Tomatoes</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Quality</th>
+                      <td>Hybrid</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Price</th>
+                      <td>20 (<b>Units: </b> 1 kg )</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Farmer Name: </th>
+                      <td>Vivek Deshmukh (Aurangabad)</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <a href="#">View More</a>
+              </div>
+            </div>
+            <a href="#"><span class="float-md-right badge badge-danger" style="color: red"><i class="fas fa-times"></i> Remove</span></a>
+          </div>
+        </div><br>
+        <div class="card">
+          <div class="card-body">
+            <span class="float-md-right badge badge-warning"><i class="fas fa-edit"></i> EDIT</span>
+            <div class="row">
+              <div class="col-md-3">
+                <span class="badge badge-light">24 Jan 2020</span><br><br>
+                <div class="view overlay rounded z-depth-1">
+                  <img class="img-fluid" src="https://www.almanac.com/sites/default/files/image_nodes/tomatoes_helios4eos_gettyimages-edit.jpeg" alt="Sample image">
+                </div>
+              </div>
+              <div class="col-md-9">
+                <table class="table table-sm table-hover">
+                  <tbody>
+                    <tr>
+                      <th scope="row">Product name</th>
+                      <td>Pusa Sadabahar Tomatoes</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Quality</th>
+                      <td>Hybrid</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Price</th>
+                      <td>20 (<b>Units: </b> 1 kg )</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Farmer Name: </th>
+                      <td>Vivek Deshmukh (Aurangabad)</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <a href="#">View More</a>
+              </div>
+            </div>
+            <a href="#"><span class="float-md-right badge badge-danger" style="color: red"><i class="fas fa-times"></i> Remove</span></a>
+          </div>
+        </div><br>
+        <div class="card">
+        <center> <p style="background: #fc6464; color: white">This post has been rejected.</p></center>
+          <div class="card-body">
+            <!-- <span class="float-md-right badge badge-warning"><i class="fas fa-edit"></i> REJECTED</span> -->
+            <div class="row">
+              <div class="col-md-3">
+                <span class="badge badge-light">24 Jan 2020</span><br><br>
+                <div class="view overlay rounded z-depth-1">
+                  <img class="img-fluid" src="https://www.almanac.com/sites/default/files/image_nodes/tomatoes_helios4eos_gettyimages-edit.jpeg" alt="Sample image">
+                </div>
+              </div>
+              <div class="col-md-9">
+                <table class="table table-sm table-hover">
+                  <tbody>
+                    <tr>
+                      <th scope="row">Product name</th>
+                      <td>Pusa Sadabahar Tomatoes</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Quality</th>
+                      <td>Hybrid</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Price</th>
+                      <td>20 (<b>Units: </b> 1 kg )</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Farmer Name: </th>
+                      <td>Vivek Deshmukh (Aurangabad)</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div><br>
+
+
+      </div>
+    </div>
+  </section>
+</div>
+
+
+{%endblock content%}
